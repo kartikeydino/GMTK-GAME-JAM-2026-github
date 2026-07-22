@@ -1,29 +1,7 @@
 [gd_scene format=3 uid="uid://bphj44kqyxsps"]
 
-[ext_resource type="Texture2D" uid="uid://ch8j0iylhicy4" path="res://Art/ant walking gif.png" id="1_lrwn0"]
 [ext_resource type="Script" uid="uid://hyibnyqr57me" path="res://Scenes/ant_enemy.gd" id="1_va7qo"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_va7qo"]
-atlas = ExtResource("1_lrwn0")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_l7q6h"]
-atlas = ExtResource("1_lrwn0")
-region = Rect2(0, 256, 256, 256)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ltfk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_va7qo")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_l7q6h")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 10.0
-}]
+[ext_resource type="SpriteFrames" uid="uid://div445hngc14u" path="res://ant.tres" id="2_va7qo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3nfc"]
 radius = 33.0
@@ -37,7 +15,7 @@ script = ExtResource("1_va7qo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1140820137]
 texture_filter = 1
-sprite_frames = SubResource("SpriteFrames_8ltfk")
+sprite_frames = ExtResource("2_va7qo")
 autoplay = "default"
 frame_progress = 0.10366819
 flip_h = true
