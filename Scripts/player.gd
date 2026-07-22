@@ -1,5 +1,5 @@
 extends CharacterBody2D
-
+const lettuce_cursor = preload("uid://cytjpyyiasv1g")
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -23,3 +23,6 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+	
+func _process(_delta: float) -> void:
+	Input.set_custom_mouse_cursor(lettuce_cursor, Input.CURSOR_ARROW)
