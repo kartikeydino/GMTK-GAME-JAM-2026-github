@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bphj44kqyxsps"]
 
 [ext_resource type="Texture2D" uid="uid://ch8j0iylhicy4" path="res://Art/ant walking gif.png" id="1_lrwn0"]
+[ext_resource type="Script" uid="uid://hyibnyqr57me" path="res://Scenes/ant_enemy.gd" id="1_va7qo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_va7qo"]
 atlas = ExtResource("1_lrwn0")
@@ -28,13 +29,29 @@ animations = [{
 radius = 33.0
 height = 130.56831
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k8pp1"]
+size = Vector2(127, 20)
+
 [node name="Ant Enemy" type="Area2D" unique_id=1104532634]
+script = ExtResource("1_va7qo")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1140820137]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8ltfk")
+autoplay = "default"
 frame_progress = 0.10366819
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
 position = Vector2(-10, 30)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_l3nfc")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=683998894]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1068112326]
+position = Vector2(-16.5, -10)
+shape = SubResource("RectangleShape2D_k8pp1")
+debug_color = Color(0.96349245, 0, 0.5012339, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

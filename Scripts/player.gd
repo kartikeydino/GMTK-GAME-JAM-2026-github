@@ -27,5 +27,8 @@ func _physics_process(delta: float) -> void:
 func _process(_delta: float) -> void:
 	Input.set_custom_mouse_cursor(lettuce_cursor, Input.CURSOR_ARROW)
 
-func jump():
-	velocity.y = 300.0 
+func player():
+	pass 
+
+func bouncy_wouncy():
+	velocity.y = -300.0
