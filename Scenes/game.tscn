@@ -1,7 +1,14 @@
 [gd_scene format=3 uid="uid://boq0qnq8asvbo"]
 
 [ext_resource type="PackedScene" uid="uid://cas5l2v07urle" path="res://Scenes/player.tscn" id="1_qxrlw"]
+[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=685918000]
 
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("1_qxrlw")]
+
+[node name="Timer" parent="." unique_id=1737727876 instance=ExtResource("2_qxrlw")]
+timer_time = 10.0
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1846243065]
+zoom = Vector2(0.7, 0.7)
