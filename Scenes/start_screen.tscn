@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://c5pvvrul7cdub"]
+
+[ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scenes/start_screen.gd" id="1_5e717"]
+[ext_resource type="Texture2D" uid="uid://ba8e4rqlq18tq" path="res://Art/Mint Green BG.png" id="1_ainjc"]
+[ext_resource type="Texture2D" uid="uid://dwaliakimgh1f" path="res://Art/Grass Burger.png" id="2_60ddj"]
+[ext_resource type="Texture2D" uid="uid://bnf5bivdafjfa" path="res://Art/TOMATO.png" id="3_60ddj"]
+
+[node name="Start Screen" type="Control" unique_id=69391054]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5e717")
+
+[node name="Background" type="TextureRect" parent="." unique_id=960814440]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_ainjc")
+
+[node name="Main image" type="TextureRect" parent="." unique_id=806674259]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = -1
+offset_left = 256.0
+offset_top = 24.0
+offset_right = 856.0
+offset_bottom = 624.0
+texture = ExtResource("2_60ddj")
+
+[node name="Button" type="Button" parent="." unique_id=285534438]
+layout_mode = 0
+offset_left = 813.0
+offset_top = 211.0
+offset_right = 1141.0
+offset_bottom = 539.0
+icon = ExtResource("3_60ddj")
+
+[connection signal="pressed" from="Button" to="." method="_on_play_pressed"]
