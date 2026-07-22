@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bphj44kqyxsps"]
 
 [ext_resource type="Texture2D" uid="uid://ch8j0iylhicy4" path="res://Art/ant walking gif.png" id="1_lrwn0"]
-[ext_resource type="Script" uid="uid://bylmqj3g2lhtt" path="res://Scripts/hurtbox.gd" id="2_va7qo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_va7qo"]
 atlas = ExtResource("1_lrwn0")
@@ -29,32 +28,13 @@ animations = [{
 radius = 33.0
 height = 130.56831
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
-size = Vector2(70, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yobgy"]
-size = Vector2(75.5, 41.5)
-
 [node name="Ant Enemy" type="Area2D" unique_id=1104532634]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1140820137]
 sprite_frames = SubResource("SpriteFrames_8ltfk")
-frame_progress = 0.45466483
+frame_progress = 0.10366819
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
 position = Vector2(-10, 30)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_l3nfc")
-
-[node name="Hurtbox" type="Area2D" parent="." unique_id=923787169]
-script = ExtResource("2_va7qo")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1868448383]
-position = Vector2(15, -5)
-shape = SubResource("RectangleShape2D_8ltfk")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Hurtbox" unique_id=706467333]
-position = Vector2(-55, -23.75)
-shape = SubResource("RectangleShape2D_yobgy")
-
-[connection signal="body_entered" from="Hurtbox" to="Hurtbox" method="_on_body_entered"]
