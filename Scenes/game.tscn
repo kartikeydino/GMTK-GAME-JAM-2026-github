@@ -1,15 +1,8 @@
 [gd_scene format=3 uid="uid://boq0qnq8asvbo"]
 
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="2_qxrlw"]
-[ext_resource type="PackedScene" uid="uid://dui1du02bnwfx" path="res://burger.tscn" id="2_wrm1d"]
 
 [node name="Game" type="Node2D" unique_id=685918000]
 
 [node name="Timer" parent="." unique_id=1737727876 instance=ExtResource("2_qxrlw")]
 timer_time = 10.0
-
-[node name="Burger" parent="." unique_id=1493246955 instance=ExtResource("2_wrm1d")]
-scale = Vector2(1, 1)
-
-[node name="Camera2D" type="Camera2D" parent="Burger" unique_id=1846243065]
-zoom = Vector2(0.7, 0.7)
