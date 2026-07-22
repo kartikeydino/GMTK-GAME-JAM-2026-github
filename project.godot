@@ -11,6 +11,7 @@ config_version=5
 [application]
 
 config/name="Countdown"
+run/main_scene="uid://cas5l2v07urle"
 config/features=PackedStringArray("4.7")
 HEADrun/main_scene="uid://c5pvvrul7cdub"
 032090a5b095fd1f5f15357a94cea0abfa14a351config/features=PackedStringArray("4.7", "GL Compatibility")
