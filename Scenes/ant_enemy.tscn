@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bphj44kqyxsps"]
 
-[ext_resource type="Script" uid="uid://hyibnyqr57me" path="res://Scenes/ant_enemy.gd" id="1_va7qo"]
+[ext_resource type="Script" uid="uid://hyibnyqr57me" path="res://Scripts/ant_enemy.gd" id="1_va7qo"]
 [ext_resource type="SpriteFrames" uid="uid://div445hngc14u" path="res://ant.tres" id="2_va7qo"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3nfc"]
