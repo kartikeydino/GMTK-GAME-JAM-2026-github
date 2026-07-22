@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o3fr7aihm485"
-path="res://.godot/imported/New Piskel (93).png-ea82c893973e20525560424e41b5c73d.ctex"
+uid="uid://ba8e4rqlq18tq"
+path="res://.godot/imported/Mint Green BG.png-d5473f63f87796b473f93739343b30d7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://New Piskel (93).png"
-dest_files=["res://.godot/imported/New Piskel (93).png-ea82c893973e20525560424e41b5c73d.ctex"]
+source_file="res://Art/Mint Green BG.png"
+dest_files=["res://.godot/imported/Mint Green BG.png-d5473f63f87796b473f93739343b30d7.ctex"]
 
 [params]
 

@@ -11,9 +11,10 @@ config_version=5
 [application]
 
 config/name="Countdown"
-run/main_scene="uid://boq0qnq8asvbo"
+HEAD
+run/main_scene="uid://c5pvvrul7cdub"
+032090a5b095fd1f5f15357a94cea0abfa14a351
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
 
 [display]
 
