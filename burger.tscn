@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dui1du02bnwfx"]
+
+[ext_resource type="Script" uid="uid://c71d10r8lfhnr" path="res://burger.gd" id="1_5n162"]
+[ext_resource type="Texture2D" uid="uid://o3fr7aihm485" path="res://New Piskel (93).png" id="2_eu31t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qtf4o"]
+radius = 63.0
+height = 168.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qtf4o"]
+size = Vector2(168, 30)
+
+[node name="Burger" type="CharacterBody2D" unique_id=1493246955]
+script = ExtResource("1_5n162")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1163619352]
+texture_filter = 1
+texture = ExtResource("2_eu31t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1350432875]
+position = Vector2(3, 7)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_qtf4o")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=955997748]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1268101941]
+position = Vector2(4, 74)
+shape = SubResource("RectangleShape2D_qtf4o")
+debug_color = Color(0.9691823, 0, 0.46614558, 0.41960785)
+
+[node name="Timer" type="Timer" parent="." unique_id=2083492787]
+wait_time = 0.12
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
