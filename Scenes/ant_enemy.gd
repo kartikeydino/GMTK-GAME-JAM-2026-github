@@ -3,7 +3,8 @@ extends Area2D
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	queue_free()
+	if(area.has_method("kill")):
+		queue_free()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":

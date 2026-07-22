@@ -40,6 +40,7 @@ texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 autoplay = "default"
 frame_progress = 0.10366819
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
 position = Vector2(-10, 30)
