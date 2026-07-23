@@ -1,8 +1,0 @@
-[gd_scene format=3 uid="uid://boq0qnq8asvbo"]
-
-[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="2_qxrlw"]
-
-[node name="Game" type="Node2D" unique_id=685918000]
-
-[node name="Timer" parent="." unique_id=1737727876 instance=ExtResource("2_qxrlw")]
-timer_time = 10.0

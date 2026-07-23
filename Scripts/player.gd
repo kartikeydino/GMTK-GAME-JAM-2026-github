@@ -1,9 +1,10 @@
 extends CharacterBody2D
-const lettuce_cursor = preload("uid://cytjpyyiasv1g")
 
-var SPEED = 300.0
-var JUMP_VELOCITY = -400.0
+const lettuce_cursor = preload("uid://bdbnpouilm10c")
+@onready var dielabel: Label = $Label
 
+const SPEED = 700.0
+const JUMP_VELOCITY = -700.0
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
