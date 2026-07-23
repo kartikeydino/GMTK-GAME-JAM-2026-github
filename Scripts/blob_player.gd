@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 const lettuce_cursor = preload("uid://bdbnpouilm10c")
-@onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 const SPEED = 900.0
 const JUMP_VELOCITY = -800.0
@@ -10,6 +10,7 @@ var dying: bool = false
 var can_basic_walk: bool = true
 var can_jump: bool = true
 var can_direction_flip: bool = true
+var is_left : bool
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -19,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if (can_jump):
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
-			sprite.play("propeller hat jump")
+			#sprite_2d.play("propeller hat jump")
 			velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -32,13 +33,12 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 		move_and_slide()
-	if (can_direction_flip):
-		if velocity.x > 1:
-			sprite.flip_h = false
+		if direction == -1:
+			sprite_2d.flip_h = true
 		else:
-			sprite.flip_h = true
+			sprite_2d.flip_h = false
 	if(is_on_floor()):
-		sprite.play("default")
+		pass
 
 func player():
 	pass 
