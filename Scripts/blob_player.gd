@@ -19,29 +19,13 @@ var jumping: bool = false
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor() or jumping == true:
-		anim_sprite.play("propeller hat jump")
+		anim_sprite.play("propeller hat jump") 
 		velocity += get_gravity() * delta
-<<<<<<< Updated upstream
 		anim_player.play("flying reset")
 	if is_on_floor():
 		anim_sprite.play("default")
 		anim_player.play("bobbing anim")
 		jumping = false
-		
-		
-=======
-		await get_tree().create_timer(0.1).timeout
-		if not is_on_floor():	
-			anim_sprite.play("propeller hat jump")
-			anim_player.play("RESET")
-		else:
-			pass
-	if is_on_floor():
-		anim_sprite.play("default")
-		anim_sprite.stop("propeller hat jump")
-		anim_player.play("bobbing anim")
-		jumping = false
->>>>>>> Stashed changes
 	if (can_jump):
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
