@@ -26,6 +26,6 @@ func _physics_process(_delta: float) -> void:
 	if not ray_cast.is_colliding():
 		global_position += (player_node.global_position - global_position - Vector2(20,0)).normalized() * speed
 		if player_node.global_position.x < global_position.x:
-			anim.flip_h = false
+			scale.x = 1
 		else:
-			anim.flip_h = true
+			scale.x = -1

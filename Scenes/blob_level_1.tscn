@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://7yltj6ly0ako" path="res://Scripts/blob_level_1.gd" id="1_2gklx"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://cas5l2v07urle" path="res://Scenes/blob_player.tscn" id="2_lhdnt"]
+[ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_7d7qa"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://bphj44kqyxsps" path="res://Scenes/ant_enemy.tscn" id="4_7p6j4"]
 [ext_resource type="AudioStream" uid="uid://cb61o7ljpgj1u" path="res://Music/ant_death.mp3" id="6_lhdnt"]
@@ -29,6 +30,7 @@ offset_left = -487.0
 offset_top = -4800.0
 offset_right = 487.0
 offset_bottom = -4631.0
+theme_override_fonts/font = ExtResource("3_7d7qa")
 theme_override_font_sizes/font_size = 60
 text = "YOU DIED... HOW DISSAPOINTING
              RESTARTING NOW"
@@ -46,6 +48,7 @@ timer_time = 10.0
 
 [node name="Beating the game label" type="Label" parent="CanvasLayer" unique_id=538649495]
 process_mode = 1
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -59,6 +62,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0.89234334, 0.98048156, 1.540184e-06, 1)
+theme_override_fonts/font = ExtResource("3_7d7qa")
 theme_override_font_sizes/font_size = 40
 text = "Great job! 
 You beat the game!"
@@ -66,6 +70,7 @@ horizontal_alignment = 1
 
 [node name="Losing the game label" type="Label" parent="CanvasLayer" unique_id=2035340008]
 process_mode = 1
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -79,6 +84,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0.83137256, 0, 1)
+theme_override_fonts/font = ExtResource("3_7d7qa")
 theme_override_font_sizes/font_size = 40
 text = "Better luck next time...
 You lost your jump..."
@@ -94,12 +100,13 @@ offset_top = 118.0
 offset_right = 232.0
 offset_bottom = 214.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_7d7qa")
 theme_override_font_sizes/font_size = 64
 text = "GO TO LEVEL 2"
 
 [node name="Ant Enemy" parent="." unique_id=1104532634 node_paths=PackedStringArray("player_node") instance=ExtResource("4_7p6j4")]
 position = Vector2(-347, -80)
-player_node = NodePath("")
+player_node = NodePath("../Blob_Player")
 permanent_y_value = -65
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1257937851]

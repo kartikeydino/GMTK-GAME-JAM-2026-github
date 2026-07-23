@@ -5,11 +5,11 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3nfc"]
 radius = 33.0
-height = 86.0
+height = 108.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_va7qo"]
-radius = 21.0
-height = 107.66792
+radius = 8.999998
+height = 72.00001
 
 [node name="Ant Enemy" type="Area2D" unique_id=1104532634]
 script = ExtResource("1_va7qo")
@@ -23,21 +23,21 @@ frame = 1
 frame_progress = 0.78789043
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
-position = Vector2(-10, 41)
+position = Vector2(-7, 34)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_l3nfc")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=683998894]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1068112326]
-position = Vector2(-14, 8)
-rotation = -1.3334316
+position = Vector2(-58, -46)
+rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_va7qo")
 debug_color = Color(0.96349245, 0, 0.5012339, 0.41960785)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=1260985073]
-position = Vector2(60, 0)
-target_position = Vector2(40, 0)
+position = Vector2(-70, 0)
+target_position = Vector2(-40, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

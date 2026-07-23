@@ -5,6 +5,8 @@ extends Node2D
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var ant_death_vfx: AudioStreamPlayer = $AudioStreamPlayer
+@onready var lvl_2_button: Button = $"CanvasLayer/Lvl 2 button"
+
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,8 +26,9 @@ func _on_ant_enemy_died() -> void:
 		timer.timer.stop()
 		beating_label.visible = true
 		blob_player.can_jump = true
+		lvl_2_button.visible = true
 
 
 func _on_lvl_2_button_pressed() -> void:
 	pass # Replace with function body.
-	#get_tree().change_scene_to_file()
+	get_tree().change_scene_to_file("res://Scenes/blob_level_2.tscn")

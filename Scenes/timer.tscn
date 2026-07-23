@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://ciamklcmp5pgf"]
 
 [ext_resource type="Script" uid="uid://bwgbb62tdjgr6" path="res://Scripts/timer.gd" id="1_pvhx5"]
+[ext_resource type="FontFile" uid="uid://c8ooaj03yc7kc" path="res://Pixelify_Sans/static/PixelifySans-SemiBold.ttf" id="2_ycw00"]
 
 [node name="Timer" type="Node2D" unique_id=1737727876]
 script = ExtResource("1_pvhx5")
@@ -18,6 +19,7 @@ offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("2_ycw00")
 theme_override_font_sizes/font_size = 64
 text = "WOOOOOIMABOUTTOMAKEANAMEFORMYSELF"
 
