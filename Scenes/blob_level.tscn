@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="2_7p6j4"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_6444e"]
 [ext_resource type="PackedScene" uid="uid://bphj44kqyxsps" path="res://Scenes/ant_enemy.tscn" id="4_7p6j4"]
+[ext_resource type="AudioStream" uid="uid://lc2y6avfci6q" path="res://Music/ant_death_vfx.mp3" id="6_vj6ri"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
 texture = ExtResource("2_7p6j4")
@@ -89,5 +90,10 @@ horizontal_alignment = 1
 position = Vector2(-347, -80)
 player_node = NodePath("../Player")
 permanent_y_value = -65
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1257937851]
+process_mode = 3
+stream = ExtResource("6_vj6ri")
+bus = &"VFX"
 
 [connection signal="died" from="Ant Enemy" to="." method="_on_ant_enemy_died"]

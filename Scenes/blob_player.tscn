@@ -121,9 +121,6 @@ script = ExtResource("1_k2lrx")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1626983360]
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
-animation = &"propeller hat jump"
-frame = 3
-frame_progress = 0.86750335
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984378034]
 position = Vector2(2, 41)
