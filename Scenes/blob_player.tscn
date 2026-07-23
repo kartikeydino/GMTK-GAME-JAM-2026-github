@@ -108,10 +108,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pvhx5"]
-radius = 47.423515
-height = 132.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fkybt"]
 size = Vector2(141, 20)
 
@@ -159,10 +155,10 @@ script = ExtResource("1_k2lrx")
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984378034]
-position = Vector2(2, 41)
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1921116901]
+position = Vector2(-16, 72)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_pvhx5")
+polygon = PackedVector2Array(-95, -16.999996, -94, -1.9999962, -88, -1.9999962, -80, 6.000003, -72, 14.000003, -57, 30.000004, -27.999996, 37, -11.999996, 53.000004, 3, 60.000004, 12, 60.000004, 13, 38, 20, 38, 20, -62, 13, -62, 13, -78, 5, -78, 5, -86, -2, -86, -2, -93, -18.000004, -93, -49.000004, -100, -79, -108, -80, -95, -94, -91, -95, -78, -103, -71, -103, -16.999996)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=787880186]
 zoom = Vector2(0.8, 0.8)

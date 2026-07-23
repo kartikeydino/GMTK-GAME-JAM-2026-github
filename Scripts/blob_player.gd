@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
 const lettuce_cursor = preload("uid://bdbnpouilm10c")
-@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
 
 const SPEED = 900.0
 const JUMP_VELOCITY = -800.0
@@ -18,11 +18,10 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	if is_on_floor():
-		animated_sprite_2d.play("default")
-		animation_player.play("bobbing anim")
+		anim_sprite.play("default")
+		anim_player.play("bobbing anim")
 	elif not is_on_floor():
-		animated_sprite_2d.play("propeller hat jump")
-		animation_player.stop()
+		anim_sprite.play("propeller hat jump")
 	if (can_jump):
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
@@ -38,9 +37,9 @@ func _physics_process(delta: float) -> void:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		move_and_slide()
 		if direction == -1:
-			animated_sprite_2d.flip_h = true
+			anim_sprite.flip_h = true
 		else:
-			animated_sprite_2d.flip_h = false
+			anim_sprite.flip_h = false
 
 func player():
 	pass 
