@@ -1,7 +1,7 @@
 extends Node2D
 @onready var timer: Node2D = $CanvasLayer/Timer
 @onready var ant: Area2D = $"Ant Enemy"
-@onready var player: CharacterBody2D = $Player
+@onready var blob_player: CharacterBody2D = $Blob_Player
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var ant_death_vfx: AudioStreamPlayer = $AudioStreamPlayer
@@ -14,7 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (timer.timer.time_left <=0):
 		if not beat_lvl_before_time:
-			player.can_jump = false
+			blob_player.can_jump = false
 			losing_label.visible = true
 
 func _on_ant_enemy_died() -> void:
@@ -23,7 +23,7 @@ func _on_ant_enemy_died() -> void:
 		beat_lvl_before_time = true
 		timer.timer.stop()
 		beating_label.visible = true
-		player.can_jump = true
+		blob_player.can_jump = true
 
 
 func _on_lvl_2_button_pressed() -> void:

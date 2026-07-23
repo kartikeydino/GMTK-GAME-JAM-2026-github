@@ -9,7 +9,7 @@ height = 86.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_va7qo"]
 radius = 21.0
-height = 77.15767
+height = 107.66792
 
 [node name="Ant Enemy" type="Area2D" unique_id=1104532634]
 script = ExtResource("1_va7qo")
@@ -21,7 +21,6 @@ animation = &"walking"
 autoplay = "default"
 frame = 1
 frame_progress = 0.78789043
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
 position = Vector2(-10, 41)
@@ -31,8 +30,8 @@ shape = SubResource("CapsuleShape2D_l3nfc")
 [node name="Hurtbox" type="Area2D" parent="." unique_id=683998894]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1068112326]
-position = Vector2(39, 8)
-rotation = 1.3334316
+position = Vector2(-14, 8)
+rotation = -1.3334316
 shape = SubResource("CapsuleShape2D_va7qo")
 debug_color = Color(0.96349245, 0, 0.5012339, 0.41960785)
 
