@@ -35,5 +35,9 @@ position = Vector2(56, 6)
 shape = SubResource("CapsuleShape2D_va7qo")
 debug_color = Color(0.96349245, 0, 0.5012339, 0.41960785)
 
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1260985073]
+position = Vector2(60, 0)
+target_position = Vector2(40, 0)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

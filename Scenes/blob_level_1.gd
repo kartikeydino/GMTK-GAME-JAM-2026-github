@@ -4,6 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
+@onready var ant_death_vfx: AudioStreamPlayer = $AudioStreamPlayer
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +24,7 @@ func _process(delta: float) -> void:
 		
 
 func _on_ant_enemy_died() -> void:
+	ant_death_vfx.play()
 	if (timer.timer.time_left >0):
 		beat_lvl_before_time = true
 		print(str(timer.timer.time_left))

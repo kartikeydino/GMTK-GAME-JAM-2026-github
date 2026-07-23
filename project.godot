@@ -16,6 +16,10 @@ config/features=PackedStringArray("4.7")
 HEADrun/main_scene="uid://c5pvvrul7cdub"
 032090a5b095fd1f5f15357a94cea0abfa14a351config/features=PackedStringArray("4.7", "GL Compatibility")
 
+[audio]
+
+buses/default_bus_layout="uid://bscu38jhenw20"
+
 [display]
 
 window/stretch/mode="canvas_items"
