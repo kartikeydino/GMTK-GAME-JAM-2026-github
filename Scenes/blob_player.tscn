@@ -128,7 +128,23 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_cwuaj"]
 resource_name = "bobbing anim"
-loop_mode = 2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1, 0.7), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_x45rm"]
+resource_name = "flying reset"
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -139,13 +155,14 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(1, 1), Vector2(1, 0.7)]
+"values": [Vector2(1, 1), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x45rm"]
 _data = {
 &"RESET": SubResource("Animation_iclfv"),
-&"bobbing anim": SubResource("Animation_cwuaj")
+&"bobbing anim": SubResource("Animation_cwuaj"),
+&"flying reset": SubResource("Animation_x45rm")
 }
 
 [node name="Blob_Player" type="CharacterBody2D" unique_id=1265756167]
@@ -156,8 +173,9 @@ scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="." unique_id=1921116901]
-position = Vector2(-16, 72)
+position = Vector2(-16, 67.02023)
 rotation = 1.5707964
+scale = Vector2(0.96440476, 1)
 polygon = PackedVector2Array(-95, -16.999996, -94, -1.9999962, -88, -1.9999962, -80, 6.000003, -72, 14.000003, -57, 30.000004, -27.999996, 37, -11.999996, 53.000004, 3, 60.000004, 12, 60.000004, 13, 38, 20, 38, 20, -62, 13, -62, 13, -78, 5, -78, 5, -86, -2, -86, -2, -93, -18.000004, -93, -49.000004, -100, -79, -108, -80, -95, -94, -91, -95, -78, -103, -71, -103, -16.999996)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=787880186]
