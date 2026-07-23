@@ -40,11 +40,11 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
-size = Vector2(123, 120)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
 radius = 47.042534
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyhha"]
+size = Vector2(104, 213)
 
 [node name="Player" type="CharacterBody2D" unique_id=1265756167]
 script = ExtResource("1_6t5aa")
@@ -55,10 +55,6 @@ sprite_frames = SubResource("SpriteFrames_8ltfk")
 animation = &"idle"
 frame = 2
 frame_progress = 0.2643248
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=984378034]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_8ltfk")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=787880186]
 zoom = Vector2(0.8, 0.8)
@@ -78,3 +74,7 @@ offset_right = 43.0
 offset_bottom = -65.0
 theme_override_font_sizes/font_size = 32
 text = "DEAD"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557070190]
+position = Vector2(1, 45.5)
+shape = SubResource("RectangleShape2D_uyhha")

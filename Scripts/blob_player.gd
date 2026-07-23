@@ -14,20 +14,26 @@ var can_basic_walk: bool = true
 var can_jump: bool = true
 var can_direction_flip: bool = true
 var is_left : bool
+var jumping: bool = false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		if (jumping == false):
+			anim_player.play("bobbing anim")
+		anim_player.play("bobbing anim")
 	if is_on_floor():
 		anim_sprite.play("default")
-		anim_player.play("bobbing anim")
+		jumping = false
 	elif not is_on_floor():
 		anim_sprite.play("propeller hat jump")
 	if (can_jump):
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
 			velocity.y = JUMP_VELOCITY
+			await get_tree().create_timer(0.05).timeout
+			jumping = true
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
