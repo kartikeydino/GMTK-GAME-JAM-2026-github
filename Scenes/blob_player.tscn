@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cx761xumohchq" path="res://Art/blob.webp" id="2_iclfv"]
 [ext_resource type="Texture2D" uid="uid://cpww50ysxjft5" path="res://Art/blob jump.png" id="3_cwuaj"]
 [ext_resource type="Texture2D" uid="uid://4gri1q46ysf" path="res://Art/blob fly.png" id="4_iclfv"]
-[ext_resource type="Script" uid="uid://upejt15jkql7" path="res://Scripts/blob_player_killbox.gd" id="4_k2lrx"]
+[ext_resource type="Script" uid="uid://upejt15jkql7" path="res://Scripts/player_killbox.gd" id="4_k2lrx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
 atlas = ExtResource("2_iclfv")
@@ -150,7 +150,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/path = NodePath(".:scale")
 tracks/0/interp = 1
-tracks/0/loop_wrap = true
+tracks/0/loop_wrap = false
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),

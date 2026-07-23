@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scripts/start_screen.gd" id="1_5e717"]
 [ext_resource type="Texture2D" uid="uid://ba8e4rqlq18tq" path="res://Art/Mint Green BG.png" id="1_ainjc"]
-[ext_resource type="Texture2D" uid="uid://dwaliakimgh1f" path="res://Art/Grass Burger.png" id="2_60ddj"]
 [ext_resource type="Texture2D" uid="uid://roi7xo22xsem" path="res://Art/Play Button.png" id="4_5e717"]
+[ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_mtlf8"]
 
 [node name="Start Screen" type="Control" unique_id=69391054]
 layout_mode = 3
@@ -20,22 +20,40 @@ offset_right = 1152.0
 offset_bottom = 648.0
 texture = ExtResource("1_ainjc")
 
-[node name="Main image" type="TextureRect" parent="." unique_id=806674259]
-texture_filter = 1
-layout_mode = 1
-anchors_preset = -1
-offset_left = 256.0
-offset_top = 24.0
-offset_right = 856.0
-offset_bottom = 624.0
-texture = ExtResource("2_60ddj")
-
-[node name="Button" type="Button" parent="." unique_id=285534438]
+[node name="Play_Button" type="Button" parent="." unique_id=285534438]
 layout_mode = 0
-offset_left = 897.0
-offset_top = 268.0
-offset_right = 1105.0
-offset_bottom = 476.0
+offset_left = 757.0
+offset_top = 361.0
+offset_right = 965.0
+offset_bottom = 569.0
 icon = ExtResource("4_5e717")
 
-[connection signal="pressed" from="Button" to="." method="_on_play_pressed"]
+[node name="Label" type="Label" parent="." unique_id=1598192107]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -313.0
+offset_top = -179.0
+offset_right = 305.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_mtlf8")
+theme_override_font_sizes/font_size = 64
+text = "Wait... 
+WHERES MY JUMP?!?!"
+horizontal_alignment = 1
+
+[node name="Tutorial" type="Button" parent="." unique_id=1622276099]
+layout_mode = 0
+offset_left = 198.0
+offset_top = 413.0
+offset_right = 465.0
+offset_bottom = 503.0
+text = "Tutorial
+"
+
+[connection signal="pressed" from="Play_Button" to="." method="_on_play_pressed"]

@@ -21,6 +21,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() or jumping == true:
 		anim_sprite.play("propeller hat jump")
 		velocity += get_gravity() * delta
+<<<<<<< Updated upstream
 		anim_player.play("flying reset")
 	if is_on_floor():
 		anim_sprite.play("default")
@@ -28,6 +29,19 @@ func _physics_process(delta: float) -> void:
 		jumping = false
 		
 		
+=======
+		await get_tree().create_timer(0.1).timeout
+		if not is_on_floor():	
+			anim_sprite.play("propeller hat jump")
+			anim_player.play("RESET")
+		else:
+			pass
+	if is_on_floor():
+		anim_sprite.play("default")
+		anim_sprite.stop("propeller hat jump")
+		anim_player.play("bobbing anim")
+		jumping = false
+>>>>>>> Stashed changes
 	if (can_jump):
 		# Handle jump.
 		if Input.is_action_just_pressed("up") and is_on_floor():
@@ -48,10 +62,6 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.flip_h = true
 		else:
 			anim_sprite.flip_h = false
-	
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		blobmite_instantiate.transform.origin = Vector2(global_position.x + 100, global_position.y +100)
-		get_tree().current_scene.add_child(blobmite_instantiate)
 
 func player():
 	pass 
