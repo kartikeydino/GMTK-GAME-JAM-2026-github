@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scripts/start_screen.gd" id="1_5e717"]
 [ext_resource type="Texture2D" uid="uid://ba8e4rqlq18tq" path="res://Art/Mint Green BG.png" id="1_ainjc"]
 [ext_resource type="Texture2D" uid="uid://dwaliakimgh1f" path="res://Art/Grass Burger.png" id="2_60ddj"]
-[ext_resource type="Texture2D" uid="uid://bnf5bivdafjfa" path="res://Art/TOMATO.png" id="3_60ddj"]
+[ext_resource type="Texture2D" uid="uid://roi7xo22xsem" path="res://Art/Play Button.png" id="4_5e717"]
 
 [node name="Start Screen" type="Control" unique_id=69391054]
 layout_mode = 3
@@ -32,10 +32,10 @@ texture = ExtResource("2_60ddj")
 
 [node name="Button" type="Button" parent="." unique_id=285534438]
 layout_mode = 0
-offset_left = 813.0
-offset_top = 211.0
-offset_right = 1141.0
-offset_bottom = 539.0
-icon = ExtResource("3_60ddj")
+offset_left = 897.0
+offset_top = 268.0
+offset_right = 1105.0
+offset_bottom = 476.0
+icon = ExtResource("4_5e717")
 
 [connection signal="pressed" from="Button" to="." method="_on_play_pressed"]

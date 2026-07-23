@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bcjvxo0eax1wg"]
 
-[ext_resource type="PackedScene" uid="uid://boq0qnq8asvbo" path="res://Scenes/blob_level.tscn" id="1_ebmjs"]
+[ext_resource type="PackedScene" uid="uid://boq0qnq8asvbo" path="res://Scenes/blob_level_1.tscn" id="1_ebmjs"]
 [ext_resource type="AudioStream" uid="uid://n4i1b5tbhel2" path="res://Music/gmtk game jam main theme.mp3" id="2_qxrlw"]
 
 [node name="Game" type="Node2D" unique_id=692546951]

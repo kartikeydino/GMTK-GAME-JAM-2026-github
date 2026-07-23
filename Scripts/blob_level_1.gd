@@ -13,19 +13,19 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if (timer.timer.time_left <=0):
-		if(beat_lvl_before_time):
-			player.can_jump = true
-			beating_label.visible = true
-			get_tree().paused = true
-		else:
+		if not beat_lvl_before_time:
 			player.can_jump = false
 			losing_label.visible = true
-			get_tree().paused = true
-		
 
 func _on_ant_enemy_died() -> void:
 	ant_death_vfx.play()
 	if (timer.timer.time_left >0):
 		beat_lvl_before_time = true
-		print(str(timer.timer.time_left))
+		timer.timer.stop()
+		beating_label.visible = true
 		player.can_jump = true
+
+
+func _on_lvl_2_button_pressed() -> void:
+	pass # Replace with function body.
+	#get_tree().change_scene_to_file()
