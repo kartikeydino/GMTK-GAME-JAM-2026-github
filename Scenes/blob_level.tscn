@@ -1,0 +1,93 @@
+[gd_scene format=4 uid="uid://boq0qnq8asvbo"]
+
+[ext_resource type="Script" uid="uid://7yltj6ly0ako" path="res://Scenes/blob_level_1.gd" id="1_2gklx"]
+[ext_resource type="PackedScene" uid="uid://cas5l2v07urle" path="res://Scenes/blob_player.tscn" id="1_xfk5q"]
+[ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="2_7p6j4"]
+[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_6444e"]
+[ext_resource type="PackedScene" uid="uid://bphj44kqyxsps" path="res://Scenes/ant_enemy.tscn" id="4_7p6j4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wowpa"]
+texture = ExtResource("2_7p6j4")
+0:0/size_in_atlas = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-64, -64, 64, -64, 64, 64, -64, 64)
+
+[sub_resource type="TileSet" id="TileSet_8ltfk"]
+tile_size = Vector2i(128, 128)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_wowpa")
+
+[node name="blob_level" type="Node2D" unique_id=685918000]
+script = ExtResource("1_2gklx")
+
+[node name="Death_Label" type="Label" parent="." unique_id=75306420]
+offset_left = -487.0
+offset_top = -4800.0
+offset_right = 487.0
+offset_bottom = -4631.0
+theme_override_font_sizes/font_size = 60
+text = "YOU DIED... HOW DISSAPOINTING
+             RESTARTING NOW"
+
+[node name="Player" parent="." unique_id=1265756167 instance=ExtResource("1_xfk5q")]
+position = Vector2(0, -200)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1212553292]
+tile_map_data = PackedByteArray("AAD//wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD9/wEAAAAAAAAAAAD8/wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAD7/wEAAAAAAAAAAAADAAEAAAAAAAAAAAAEAAEAAAAAAAAAAAAEAAIAAAAAAAAAAAADAAIAAAAAAAAAAAACAAIAAAAAAAAAAAABAAIAAAAAAAAAAAAAAAIAAAAAAAAAAAD//wIAAAAAAAAAAAD+/wIAAAAAAAAAAAD9/wIAAAAAAAAAAAD8/wIAAAAAAAAAAAD7/wIAAAAAAAAAAAD6/wIAAAAAAAAAAAD6/wEAAAAAAAAAAAD6/wAAAAAAAAAAAAD7/wAAAAAAAAAAAAD8/wAAAAAAAAAAAAD9/wAAAAAAAAAAAAD+/wAAAAAAAAAAAAD//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAACAAAAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAIAAAAAAAAAAAD6/9r/AAAAAAAAAAD6/9v/AAAAAAAAAAD6/9z/AAAAAAAAAAD6/93/AAAAAAAAAAD6/9n/AAAAAAAAAAD7/9n/AAAAAAAAAAD8/9n/AAAAAAAAAAD9/9n/AAAAAAAAAAD+/9n/AAAAAAAAAAD//9n/AAAAAAAAAAAAANn/AAAAAAAAAAABANn/AAAAAAAAAAACANn/AAAAAAAAAAADANn/AAAAAAAAAAAEANn/AAAAAAAAAAAFANn/AAAAAAAAAAAFANr/AAAAAAAAAAAFANv/AAAAAAAAAAAFANz/AAAAAAAAAAAFAN3/AAAAAAAAAAD7/93/AAAAAAAAAAD8/93/AAAAAAAAAAD9/93/AAAAAAAAAAD+/93/AAAAAAAAAAD//93/AAAAAAAAAAAAAN3/AAAAAAAAAAABAN3/AAAAAAAAAAACAN3/AAAAAAAAAAADAN3/AAAAAAAAAAAEAN3/AAAAAAAAAAD4//7/AAAAAAAAAAD5//7/AAAAAAAAAAD5////AAAAAAAAAAD4////AAAAAAAAAAD4/wAAAAAAAAAAAAD4/wEAAAAAAAAAAAD5/wEAAAAAAAAAAAD5/wAAAAAAAAAAAAD5/wIAAAAAAAAAAAD4/wIAAAAAAAAAAAD2//7/AAAAAAAAAAD2////AAAAAAAAAAD3////AAAAAAAAAAD3/wAAAAAAAAAAAAD3/wEAAAAAAAAAAAD3/wIAAAAAAAAAAAD2/wEAAAAAAAAAAAD2/wAAAAAAAAAAAAD2/wIAAAAAAAAAAAD3//7/AAAAAAAAAAAGAAIAAAAAAAAAAAAGAAEAAAAAAAAAAAAGAAAAAAAAAAAAAAAGAP//AAAAAAAAAAAGAP7/AAAAAAAAAAAHAP7/AAAAAAAAAAAIAP7/AAAAAAAAAAAJAP7/AAAAAAAAAAAJAP//AAAAAAAAAAAIAP//AAAAAAAAAAAHAP//AAAAAAAAAAAHAAAAAAAAAAAAAAAHAAEAAAAAAAAAAAAHAAIAAAAAAAAAAAAIAAIAAAAAAAAAAAAIAAEAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAJAAEAAAAAAAAAAAAJAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_8ltfk")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=688482006]
+
+[node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("3_6444e")]
+z_index = 10
+position = Vector2(736, 24)
+timer_time = 10.0
+
+[node name="Beating the game label" type="Label" parent="CanvasLayer" unique_id=538649495]
+process_mode = 1
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -56.5
+offset_right = 187.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.89234334, 0.98048156, 1.540184e-06, 1)
+theme_override_font_sizes/font_size = 40
+text = "Great job! 
+You beat the game!"
+horizontal_alignment = 1
+
+[node name="Losing the game label" type="Label" parent="CanvasLayer" unique_id=2035340008]
+process_mode = 1
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -56.5
+offset_right = 187.0
+offset_bottom = 56.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.83137256, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Better luck next time...
+You lost your jump..."
+horizontal_alignment = 1
+
+[node name="Ant Enemy" parent="." unique_id=1104532634 node_paths=PackedStringArray("player_node") instance=ExtResource("4_7p6j4")]
+position = Vector2(-347, -80)
+player_node = NodePath("../Player")
+permanent_y_value = -65
+
+[connection signal="died" from="Ant Enemy" to="." method="_on_ant_enemy_died"]
