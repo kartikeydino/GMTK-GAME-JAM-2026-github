@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("up") and has_jump == true and jump_buffer.has_overlapping_areas():
 		velocity.y = jump
 	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
-		position.y += jump * delta
+		velocity.y = jump
 	if Input.is_action_just_pressed("dash") and has_dash == true:
 		speed = 4000.0 
 		timer.start()
