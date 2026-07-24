@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://b1brldih3b34x"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
+radius = 8.0
+
+[node name="Screw" type="Area2D" unique_id=25527946]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=360566645]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2082861420]
+shape = SubResource("CircleShape2D_k8pp1")

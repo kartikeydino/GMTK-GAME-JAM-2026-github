@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bwmkbsk4dj2su"]
+
+[ext_resource type="Texture2D" uid="uid://cjq20xo33mlhu" path="res://Art/New Piskel (100).png" id="1_wwfse"]
+[ext_resource type="PackedScene" uid="uid://b1brldih3b34x" path="res://Scenes/screw.tscn" id="2_cxrok"]
+
+[node name="Boss" type="Area2D" unique_id=1081642369]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=81311707]
+texture = ExtResource("1_wwfse")
+
+[node name="Screw" parent="." unique_id=25527946 instance=ExtResource("2_cxrok")]
+position = Vector2(92, -67)
+
+[node name="Screw2" parent="." unique_id=1797737615 instance=ExtResource("2_cxrok")]
+position = Vector2(96, 56)
+
+[node name="Screw3" parent="." unique_id=1838465447 instance=ExtResource("2_cxrok")]
+position = Vector2(-94, 59)
+
+[node name="Screw4" parent="." unique_id=1074081238 instance=ExtResource("2_cxrok")]
+position = Vector2(-94, -72)

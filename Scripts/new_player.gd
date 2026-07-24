@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 var dying = false
+enum States {IDLE, BULLET}
 #Abilities
 @export var has_jump: bool = true
 @export var has_dash: bool = true
@@ -12,6 +13,7 @@ var dying = false
 @export var dash_speed = 3000.0
 @export var jump = -800.0 
 @export var downward_force = 1.3 
+@export var states = States.IDLE
 var walking: bool = false
 var glitching: bool = false
 #Connections
