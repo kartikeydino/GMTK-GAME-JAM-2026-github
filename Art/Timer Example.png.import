@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b5yjhdim1aw8j"
-path="res://.godot/imported/New Piskel.png-e7abdf0782ae430b459d1776fc5ec800.ctex"
+uid="uid://bj3m5cg8f324x"
+path="res://.godot/imported/Timer Example.png-828dd291310924aff811dd377838163a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/New Piskel.png"
-dest_files=["res://.godot/imported/New Piskel.png-e7abdf0782ae430b459d1776fc5ec800.ctex"]
+source_file="res://Art/Timer Example.png"
+dest_files=["res://.godot/imported/Timer Example.png-828dd291310924aff811dd377838163a.ctex"]
 
 [params]
 
