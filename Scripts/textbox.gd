@@ -22,3 +22,5 @@ func _process(delta: float) -> void:
 		if(person.visible_ratio <1):
 			if (text.visible_ratio < 1):
 				animation_player.play("text_for_textbox")
+		await get_tree().create_timer(6).timeout
+		self.queue_free()
