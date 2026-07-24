@@ -12,5 +12,6 @@ func _on_body_entered(body: Node2D) -> void:
 		player.set_physics_process(true)
 		await get_tree().create_timer(0.2).timeout
 		player.speed =  player.normal_speed
-		player.collision_shape.disabled = false 
+		player.collision_shape.disabled = false
+		player.self_modulate.a = 200  
 		player.position.y += -20

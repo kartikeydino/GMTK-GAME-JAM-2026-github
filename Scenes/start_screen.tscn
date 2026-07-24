@@ -135,8 +135,8 @@ offset_bottom = 40.0
 [node name="Background" type="TextureRect" parent="Main_Start_Screen" unique_id=960814440]
 self_modulate = Color(0.6117647, 0.9254902, 0.654902, 1)
 layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_right = 2121.0
+offset_bottom = 1064.0
 texture = SubResource("GradientTexture2D_8ltfk")
 
 [node name="Play_Button" type="Button" parent="Main_Start_Screen" unique_id=285534438]
