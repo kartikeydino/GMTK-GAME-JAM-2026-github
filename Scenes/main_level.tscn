@@ -1,19 +1,24 @@
 [gd_scene format=4 uid="uid://bdphsnihw2ro5"]
 
-[ext_resource type="Script" uid="uid://jv4c8e852kbe" path="res://Scripts/main_level.gd" id="1_236hc"]
+[ext_resource type="Script" uid="uid://jv4c8e852kbe" path="res://Scripts/main_level_1.gd" id="1_236hc"]
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://or72u7l12lvk" path="res://Scenes/jump_enemy.tscn" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="4_a2ia3"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_236hc"]
+[ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="7_ha3dl"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_lwkuy"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_tqiex"]
+[ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="10_f3gli"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyhha"]
+size = Vector2(454, 334)
 
 [node name="Main_Level_1" type="Node2D" unique_id=949330406]
 script = ExtResource("1_236hc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1694715195]
-tile_map_data = PackedByteArray("AAD9/wYAAQABAAAAAAD+/wYAAQABAAAAAAD//wYAAQABAAAAAAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAGAAYAAQABAAAAAAAGAAcAAQACAAEAAAAGAAgAAQACAAIAAAAFAAgAAQABAAEAAAAEAAgAAQABAAEAAAADAAgAAQABAAIAAAACAAgAAQABAAIAAAABAAgAAQABAAIAAAAAAAgAAQABAAIAAAD//wgAAQABAAIAAAD+/wgAAQABAAIAAAD9/wgAAQABAAIAAAD9/wcAAQABAAEAAAD+/wcAAQABAAEAAAD//wcAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAD6/wYAAQAAAAAAAAD6/wcAAQAAAAEAAAD6/wgAAQAAAAIAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD7/wgAAQABAAIAAAD8/wgAAQABAAIAAAD7/wcAAQABAAEAAAD8/wcAAQABAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAEAAAAJAAUAAQAAAAEAAAAJAAYAAQACAAAAAAAJAAcAAQABAAEAAAAJAAgAAQABAAIAAAAKAAMAAQABAAAAAAAKAAQAAQABAAEAAAAKAAUAAQABAAEAAAAKAAYAAQABAAEAAAAKAAcAAQABAAEAAAAKAAgAAQABAAIAAAALAAMAAQACAAAAAAALAAQAAQACAAEAAAALAAUAAQACAAEAAAALAAYAAQACAAEAAAALAAcAAQACAAEAAAALAAgAAQACAAIAAAAFAAYAAQABAAAAAAAEAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAgAAQABAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAIAAADw/wQAAQACAAAAAADw/wUAAQABAAAAAADw/wYAAQAAAAAAAADx/wQAAQACAAAAAADx/wUAAQACAAAAAADx/wYAAQABAAAAAADw/wEAAQACAAAAAADw/wIAAQACAAAAAADw/wMAAQABAAAAAADx/wEAAQABAAAAAADx/wIAAQABAAEAAADx/wMAAQACAAAAAADy/wYAAQACAAAAAADy/wMAAQACAAAAAADy/wQAAQACAAEAAADy/wUAAQACAAIAAADy/wEAAQACAAEAAADy/wIAAQACAAIAAADu/wEAAQAAAAAAAADv/wEAAQABAAAAAADr/wEAAQAAAAAAAADs/wEAAQABAAAAAADt/wEAAQACAAAAAADu/wIAAQACAAAAAADv/wIAAQABAAAAAADs/wIAAQAAAAAAAADt/wIAAQABAAAAAADv/wMAAQACAAAAAADt/wMAAQAAAAAAAADu/wMAAQABAAAAAADv/wQAAQABAAAAAADu/wQAAQAAAAAAAADv/wUAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD9/wYAAQABAAAAAAD+/wYAAQABAAAAAAD//wYAAQABAAAAAAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAGAAYAAQABAAAAAAAGAAcAAQACAAEAAAAGAAgAAQACAAIAAAAFAAgAAQABAAEAAAAEAAgAAQABAAEAAAADAAgAAQABAAIAAAACAAgAAQABAAIAAAABAAgAAQABAAIAAAAAAAgAAQABAAIAAAD//wgAAQABAAIAAAD+/wgAAQABAAIAAAD9/wgAAQABAAIAAAD9/wcAAQABAAEAAAD+/wcAAQABAAEAAAD//wcAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAD6/wYAAQABAAAAAAD6/wcAAQAAAAEAAAD6/wgAAQAAAAIAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD7/wgAAQABAAIAAAD8/wgAAQABAAIAAAD7/wcAAQABAAEAAAD8/wcAAQABAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAEAAAAJAAUAAQAAAAEAAAAJAAYAAQACAAAAAAAJAAcAAQABAAEAAAAJAAgAAQABAAIAAAAKAAMAAQABAAAAAAAKAAQAAQABAAEAAAAKAAUAAQABAAEAAAAKAAYAAQABAAEAAAAKAAcAAQABAAEAAAAKAAgAAQABAAIAAAALAAMAAQACAAAAAAALAAQAAQACAAEAAAALAAUAAQACAAEAAAALAAYAAQACAAEAAAALAAcAAQACAAEAAAALAAgAAQACAAIAAAAFAAYAAQABAAAAAAAEAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAgAAQABAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAIAAADw/wQAAQACAAAAAADw/wUAAQABAAAAAADw/wYAAQAAAAAAAADx/wQAAQACAAAAAADx/wUAAQACAAAAAADx/wYAAQABAAAAAADw/wEAAQACAAAAAADw/wIAAQACAAAAAADw/wMAAQABAAAAAADx/wEAAQABAAAAAADx/wIAAQABAAEAAADx/wMAAQACAAAAAADy/wYAAQACAAAAAADy/wMAAQACAAAAAADy/wQAAQACAAEAAADy/wUAAQACAAIAAADy/wEAAQACAAEAAADy/wIAAQACAAIAAADu/wEAAQAAAAAAAADv/wEAAQABAAAAAADr/wEAAQAAAAAAAADs/wEAAQABAAAAAADt/wEAAQACAAAAAADu/wIAAQACAAAAAADv/wIAAQABAAAAAADs/wIAAQAAAAAAAADt/wIAAQABAAAAAADv/wMAAQACAAAAAADt/wMAAQAAAAAAAADu/wMAAQABAAAAAADv/wQAAQABAAAAAADu/wQAAQAAAAAAAADv/wUAAQAAAAAAAAD2/wYAAQAAAAAAAAD3/wYAAQABAAAAAAD4/wYAAQABAAAAAAD5/wYAAQABAAAAAAA=")
 tile_set = ExtResource("2_ikcpc")
 
 [node name="jump_enemy" parent="." unique_id=1104532634 node_paths=PackedStringArray("player_node") instance=ExtResource("3_5erdv")]
@@ -29,6 +34,15 @@ scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Jump_Buffer_Area" unique_id=1329141905]
 polygon = PackedVector2Array(-466, 481, 704, 467, 704, 243, 937, 238, 951, 732, -475, 740, -467, 468)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jump_Buffer_Area" unique_id=164967729]
+position = Vector2(0, -7.416665)
+scale = Vector2(1, 1.0104166)
+polygon = PackedVector2Array(-1654, 89, -1025, 87.50516, -1019, 577.4021)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Jump_Buffer_Area" unique_id=636452683]
+position = Vector2(-595, 657)
+shape = SubResource("RectangleShape2D_uyhha")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
 
@@ -95,6 +109,12 @@ theme_override_fonts/font = ExtResource("5_236hc")
 theme_override_font_sizes/font_size = 64
 text = "GO TO LEVEL 2"
 
+[node name="Textbox" parent="CanvasLayer" unique_id=1643409094 node_paths=PackedStringArray("area2d") instance=ExtResource("7_ha3dl")]
+visible = false
+person_name = "failure"
+speech = "im a failure"
+area2d = NodePath("../../textbox_area")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("7_lwkuy")
 bus = &"VFX"
@@ -112,12 +132,8 @@ offset_bottom = -67.0
 text = "My blob left me. 😭"
 metadata/_edit_use_anchors_ = true
 
-[node name="Area2D" type="Area2D" parent="." unique_id=154763287]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=164967729]
-position = Vector2(0, -7.416665)
-scale = Vector2(1, 1.0104166)
-polygon = PackedVector2Array(-1654, 89, -1033, 88, -1033, 568)
+[node name="textbox_area" parent="." unique_id=893048733 instance=ExtResource("10_f3gli")]
+position = Vector2(-1239, -143)
 
 [connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="." method="_on_lvl_2_button_pressed"]
