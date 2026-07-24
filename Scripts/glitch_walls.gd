@@ -10,6 +10,6 @@ func _on_body_entered(body: Node2D) -> void:
 		player.speed = player.normal_speed * 10
 		player.collision_shape.disabled = true 
 		player.set_physics_process(true)
-		await get_tree().create_timer(0.12).timeout
+		await get_tree().create_timer(0.2).timeout
 		player.speed =  player.normal_speed
 		player.collision_shape.disabled = false 

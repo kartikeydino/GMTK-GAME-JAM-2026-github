@@ -142,7 +142,7 @@ position = Vector2(-1239, -143)
 [node name="glitch_walls" parent="." unique_id=7530591 instance=ExtResource("11_2jcip")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="glitch_walls" unique_id=1385126141]
-position = Vector2(725.25, 349.5)
+position = Vector2(756, 347)
 shape = SubResource("RectangleShape2D_8ltfk")
 
 [connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]
