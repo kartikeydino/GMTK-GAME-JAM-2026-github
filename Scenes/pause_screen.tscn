@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b7p6o1ef2yax2"]
+
+[ext_resource type="Shader" uid="uid://wtlyw1f2iqjs" path="res://pause_screen.gdshader" id="1_xub4q"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ltfk"]
+shader = ExtResource("1_xub4q")
+
+[node name="Pause_screen" type="Control" unique_id=95092217]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1137814775]
+material = SubResource("ShaderMaterial_8ltfk")
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
