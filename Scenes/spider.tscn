@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://bjv2pg0f07gxf" path="res://Scripts/spider.gd" id="1_gedd4"]
 [ext_resource type="Texture2D" uid="uid://65dkqxjsifa" path="res://Art/New Piskel (96).png" id="2_sbdki"]
 
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_qu26k"]
 atlas = ExtResource("2_sbdki")
 region = Rect2(0, 0, 256, 256)

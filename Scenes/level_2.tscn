@@ -4,12 +4,15 @@
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="2_uhnj4"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="4_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="5_ait6c"]
+[ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="6_bl0du"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_vcilj"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_bl0du"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_q0ycs"]
 [ext_resource type="PackedScene" uid="uid://bft48pbm4rxut" path="res://Scenes/spider.tscn" id="8_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://bs74gl4m4ea7l" path="res://Art/New Piskel (97).png" id="9_42uki"]
 [ext_resource type="PackedScene" uid="uid://d3k3pt8qye3go" path="res://Scenes/box.tscn" id="10_42uki"]
+[ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="11_t7v2y"]
+[ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="13_q0ycs"]
 
 [sub_resource type="Animation" id="Animation_t7v2y"]
 length = 0.001
@@ -67,7 +70,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("5_ait6c")]
 z_index = 10
 position = Vector2(736, 24)
-timer_time = 10.0
+timer_time = 20.0
 
 [node name="Beating the game label" type="Label" parent="CanvasLayer" unique_id=620366982]
 process_mode = 1
@@ -127,6 +130,12 @@ theme_override_fonts/font = ExtResource("6_vcilj")
 theme_override_font_sizes/font_size = 64
 text = "GO TO LEVEL 3"
 
+[node name="Textbox" parent="CanvasLayer" unique_id=1643409094 node_paths=PackedStringArray("area2d") instance=ExtResource("6_bl0du")]
+visible = false
+person_name = "Failure 2.0"
+speech = "im another failure..."
+area2d = NodePath("../../textbox_area2d")
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("7_bl0du")
 bus = &"VFX"
@@ -174,5 +183,18 @@ texture = ExtResource("9_42uki")
 position = Vector2(397, 507)
 mass = 0.232
 inertia = 2.0
+
+[node name="Label" type="Label" parent="." unique_id=1219439790]
+offset_left = -146.0
+offset_top = 80.0
+offset_right = 804.0
+offset_bottom = 395.0
+theme_override_fonts/font = ExtResource("11_t7v2y")
+theme_override_font_sizes/font_size = 128
+text = "Goal: kill spider"
+
+[node name="textbox_area2d" parent="." unique_id=893048733 instance=ExtResource("13_q0ycs")]
+position = Vector2(971, -502)
+scale = Vector2(0.9380978, 0.9127293)
 
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="CanvasLayer/Lvl 2 button" method="_on_pressed"]
