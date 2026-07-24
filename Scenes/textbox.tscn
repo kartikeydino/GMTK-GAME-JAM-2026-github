@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://cmwycnqfc2jvf"]
+
+[ext_resource type="Script" uid="uid://dcr3kqhqyttb7" path="res://textbox.gd" id="1_psw4q"]
+[ext_resource type="FontFile" uid="uid://chyf76h4k3vix" path="res://Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_i40gg"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ltfk"]
+bg_color = Color(2.117753e-06, 0.6587481, 0.8512335, 0.36078432)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[node name="Textbox" type="Control" unique_id=1643409094]
+layout_mode = 3
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -200.0
+offset_top = -248.0
+offset_right = -200.0
+offset_bottom = -248.0
+grow_horizontal = 2
+grow_vertical = 0
+script = ExtResource("1_psw4q")
+letter_speed = 1
+person_name = "person"
+speech = "im cool... are you?"
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=51256602]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 200.0
+color = Color(0.56102836, 1, 0.5282589, 1)
+
+[node name="Person" type="Label" parent="." unique_id=941215746]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0.83364725, 0.2147586, 0.25798938, 1)
+theme_override_fonts/font = ExtResource("2_i40gg")
+theme_override_font_sizes/font_size = 40
+horizontal_alignment = 1
+
+[node name="Text" type="Label" parent="." unique_id=753328098]
+custom_minimum_size = Vector2(0, 150)
+custom_maximum_size = Vector2(400, 150)
+layout_mode = 0
+offset_top = 50.0
+offset_right = 400.0
+offset_bottom = 200.0
+theme_override_colors/font_color = Color(0.3882353, 0.3254902, 0.09019608, 1)
+theme_override_fonts/font = ExtResource("2_i40gg")
+theme_override_font_sizes/font_size = 21
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Choice_1" type="Button" parent="." unique_id=2067075301]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 8.0
+offset_right = 375.0
+offset_bottom = 48.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ltfk")
+
+[node name="Choice_2" type="Button" parent="." unique_id=2074478920]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 56.0
+offset_right = 375.0
+offset_bottom = 96.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ltfk")
+
+[node name="Choice_3" type="Button" parent="." unique_id=1210836216]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 104.0
+offset_right = 375.0
+offset_bottom = 144.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ltfk")
+
+[node name="Choice_4" type="Button" parent="." unique_id=301782196]
+layout_mode = 0
+offset_left = 25.0
+offset_top = 152.0
+offset_right = 375.0
+offset_bottom = 192.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_8ltfk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1686235835]
