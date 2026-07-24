@@ -16,7 +16,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if (timer.timer.time_left <=0):
 		if not beat_lvl_before_time:
-			player.can_jump = false
+			player.has_jump = false
 			losing_label.visible = true
 
 
