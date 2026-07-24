@@ -110,6 +110,7 @@ offset_top = -105.0
 offset_right = 126.0
 offset_bottom = -67.0
 text = "My blob left me. 😭"
+metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=154763287]
 
@@ -119,3 +120,4 @@ scale = Vector2(1, 1.0104166)
 polygon = PackedVector2Array(-1654, 89, -1033, 88, -1033, 568)
 
 [connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]
+[connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="." method="_on_lvl_2_button_pressed"]
