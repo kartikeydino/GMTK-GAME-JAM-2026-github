@@ -103,9 +103,6 @@ sprite_frames = SubResource("SpriteFrames_8ltfk")
 animation = &"running"
 frame_progress = 0.3195328
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=787880186]
-zoom = Vector2(0.8, 0.8)
-
 [node name="Area2D" type="Area2D" parent="." unique_id=893833107]
 script = ExtResource("3_6t5aa")
 
