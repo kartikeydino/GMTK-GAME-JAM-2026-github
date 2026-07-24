@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bft48pbm4rxut"]
+
+[ext_resource type="Script" uid="uid://bjv2pg0f07gxf" path="res://spider.gd" id="1_gedd4"]
+[ext_resource type="Texture2D" uid="uid://65dkqxjsifa" path="res://Art/New Piskel (96).png" id="2_sbdki"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qu26k"]
+atlas = ExtResource("2_sbdki")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nxbgl"]
+atlas = ExtResource("2_sbdki")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8pp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qu26k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nxbgl")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
+radius = 4.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rkspb"]
+radius = 5.0
+
+[node name="Spider" type="Area2D" unique_id=2052655370]
+script = ExtResource("1_gedd4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1019180484]
+position = Vector2(-1, 0)
+scale = Vector2(0.08, 0.08)
+sprite_frames = SubResource("SpriteFrames_k8pp1")
+autoplay = "default"
+frame_progress = 0.7476239
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069629931]
+z_index = 3
+position = Vector2(0, 5)
+shape = SubResource("CircleShape2D_k8pp1")
+debug_color = Color(0.99995106, 0, 0.111325406, 0.41960785)
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1820485204]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=788864143]
+position = Vector2(0, -1)
+shape = SubResource("CircleShape2D_rkspb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="Hurtbox" to="." method="_on_hurtbox_body_entered"]

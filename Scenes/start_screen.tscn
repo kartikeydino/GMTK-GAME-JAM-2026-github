@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_mtlf8"]
 [ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_mtlf8"]
 [ext_resource type="Texture2D" uid="uid://bj1l1iji41cxm" path="res://Art/blob_man_idle.png" id="5_nqnrp"]
+[ext_resource type="Texture2D" uid="uid://cx761xumohchq" path="res://Art/blob.webp" id="6_nqnrp"]
 [ext_resource type="Texture2D" uid="uid://bj3m5cg8f324x" path="res://Art/Timer Example.png" id="7_5a7ho"]
 
 [sub_resource type="Gradient" id="Gradient_nqnrp"]
@@ -140,19 +141,19 @@ texture = SubResource("GradientTexture2D_8ltfk")
 
 [node name="Play_Button" type="Button" parent="Main_Start_Screen" unique_id=285534438]
 layout_mode = 0
-offset_left = 757.0
-offset_top = 361.0
-offset_right = 965.0
-offset_bottom = 569.0
+offset_left = 928.0
+offset_top = 91.0
+offset_right = 1136.0
+offset_bottom = 299.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
 icon = SubResource("CompressedTexture2D_mtlf8")
 
 [node name="Play_Button_Main" type="Button" parent="Main_Start_Screen" unique_id=1661803202]
 layout_mode = 0
-offset_left = 909.0
-offset_top = 23.0
-offset_right = 1117.0
-offset_bottom = 231.0
+offset_left = 746.0
+offset_top = 381.0
+offset_right = 954.0
+offset_bottom = 589.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
 icon = SubResource("CompressedTexture2D_mtlf8")
 
@@ -185,7 +186,7 @@ text = "Tutorial
 "
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main_Start_Screen" unique_id=1061398477]
-position = Vector2(618, 473.99997)
+position = Vector2(629.00006, 488)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 autoplay = "default"
@@ -267,6 +268,11 @@ on its head. If you touch ANY
 other part of its body... you 
 might possibly maybe go to 
 sleep"
+
+[node name="Blob" type="Sprite2D" parent="." unique_id=792328166]
+position = Vector2(1018, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("6_nqnrp")
 
 [connection signal="pressed" from="Main_Start_Screen/Play_Button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Start_Screen/Play_Button_Main" to="." method="_on_play_button_main_pressed"]

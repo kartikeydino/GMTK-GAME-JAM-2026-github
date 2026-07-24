@@ -38,3 +38,7 @@ func _physics_process(_delta: float) -> void:
 			scale.x = 1
 		else:
 			scale.x = -1
+	if $RayCast2D.is_colliding():
+		anim.flip_h = false
+	if $RayCast2D2.is_colliding():
+		anim.flip_h = true
