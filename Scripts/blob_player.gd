@@ -1,20 +1,24 @@
 extends CharacterBody2D
 
-const lettuce_cursor = preload("uid://bdbnpouilm10c")
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 const blobmite = preload("uid://b06uygu0xe6ff")
 var blobmite_instantiate = blobmite.instantiate()
 @export var antler_enemy: Area2D
-const SPEED = 900.0
+var SPEED = 900.0
+const normal_speed = 900
 const JUMP_VELOCITY = -800.0
 var dying: bool = false
 #list of variables for mechanics
 var can_basic_walk: bool = true
 var can_jump: bool = true
 var can_direction_flip: bool = true
+var can_dash: bool = true
+
 var is_left : bool
 var jumping: bool = false
+
+
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -46,6 +50,10 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.flip_h = true
 		else:
 			anim_sprite.flip_h = false
+	if (can_dash) && Input.is_action_just_pressed("dash"):
+		SPEED *= 2
+		await get_tree().create_timer(1).timeout
+		SPEED = normal_speed
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
 		blobmite_instantiate.transform.origin = Vector2(global_position.x, global_position.y)
 		get_tree().current_scene.add_child(blobmite_instantiate)
