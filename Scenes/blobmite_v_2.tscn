@@ -100,8 +100,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_7601c"]
-radius = 27.073973
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyhha"]
+radius = 29.068884
 
 [node name="blobmite_v2" type="Area2D" unique_id=950113351]
 script = ExtResource("1_7eehc")
@@ -110,6 +110,6 @@ script = ExtResource("1_7eehc")
 sprite_frames = SubResource("SpriteFrames_7eehc")
 animation = &"jump"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1493484357]
-shape = SubResource("CircleShape2D_7601c")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=563802935]
+shape = SubResource("CircleShape2D_uyhha")
 debug_color = Color(1, 1, 1, 0.41960785)
