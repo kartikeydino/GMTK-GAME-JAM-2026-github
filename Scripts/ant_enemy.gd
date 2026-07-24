@@ -14,7 +14,7 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		var player_bounce = area.get_parent()
 		player_bounce.bouncy_wouncy()
 		died.emit()
-		hurtbox_collision.disabled = true
+		hurtbox_collision.call
 		collision.disabled = true
 		var tween = create_tween()
 		tween.tween_property(anim, "scale", Vector2(1, -1), 0.3)
