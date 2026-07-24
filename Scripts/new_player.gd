@@ -54,13 +54,16 @@ func _physics_process(delta: float) -> void:
 		dash_counter += 1
 		print(dash_counter)
 	
-	##if dash_counter == 3 and Input.is_action_just_pressed("phase"):
-		#collision_polygon_2d.disabled = true 
-		#animated_sprite_2d.modulate.a = 200 
-		#speed = 2400.0
-		#await get_tree().create_timer(1).timeout 
-		#speed = 400.0
+	if velocity.x >= 300 && is_on_wall():
+		collision_polygon_2d.disabled = true
+		animated_sprite_2d.modulate.a = 200
+		await get_tree().create_timer(0.05).timeout  
+		collision_polygon_2d.disabled = false
+		
+		speed = 2400.0
+		await get_tree().create_timer(1).timeout 
+		speed = normal_speed
 	#else:
-		#collision_polygon_2d.disabled = false
-		#animated_sprite_2d.modulate.a = 255  
-		#speed = 400.0
+		collision_polygon_2d.disabled = false
+		animated_sprite_2d.modulate.a = 255  
+		speed = normal_speed
