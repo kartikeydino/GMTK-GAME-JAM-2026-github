@@ -1,12 +1,18 @@
 [gd_scene format=3 uid="uid://c5pvvrul7cdub"]
 
 [ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scripts/start_screen.gd" id="1_5e717"]
-[ext_resource type="Texture2D" uid="uid://ba8e4rqlq18tq" path="res://Art/Mint Green BG.png" id="1_ainjc"]
 [ext_resource type="Texture2D" uid="uid://roi7xo22xsem" path="res://Art/Play Button.png" id="4_5e717"]
 [ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_mtlf8"]
 [ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_mtlf8"]
 [ext_resource type="Texture2D" uid="uid://bj1l1iji41cxm" path="res://Art/blob_man_idle.png" id="5_nqnrp"]
 [ext_resource type="Texture2D" uid="uid://bj3m5cg8f324x" path="res://Art/Timer Example.png" id="7_5a7ho"]
+
+[sub_resource type="Gradient" id="Gradient_nqnrp"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ltfk"]
+gradient = SubResource("Gradient_nqnrp")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yobgy"]
 bg_color = Color(0.36078432, 0.88235295, 0.9019608, 1)
@@ -96,6 +102,12 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Gradient" id="Gradient_yobgy"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyhha"]
+gradient = SubResource("Gradient_yobgy")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyhha"]
 bg_color = Color(0, 0.3529412, 0.5764706, 1)
 corner_radius_top_left = 5
@@ -118,10 +130,11 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background" type="TextureRect" parent="Main_Start_Screen" unique_id=960814440]
+self_modulate = Color(0.6117647, 0.9254902, 0.654902, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_ainjc")
+texture = SubResource("GradientTexture2D_8ltfk")
 
 [node name="Play_Button" type="Button" parent="Main_Start_Screen" unique_id=285534438]
 layout_mode = 0
@@ -169,17 +182,16 @@ frame = 5
 frame_progress = 0.21183112
 
 [node name="Tutorial_node" type="Control" parent="." unique_id=2050742215]
-visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="Background" type="TextureRect" parent="Tutorial_node" unique_id=1984492653]
-self_modulate = Color(0, 0.8666667, 0.95686275, 1)
+self_modulate = Color(0, 0.8039216, 0.627451, 1)
 layout_mode = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-texture = ExtResource("1_ainjc")
+texture = SubResource("GradientTexture2D_uyhha")
 
 [node name="Tutorial_Label" type="Label" parent="Tutorial_node" unique_id=1508936594]
 layout_mode = 1
@@ -210,7 +222,7 @@ Look for a timer on the top left of the
 screen to see how much time you
 have left."
 
-[node name="Button" type="Button" parent="Tutorial_node" unique_id=662298799]
+[node name="Back" type="Button" parent="Tutorial_node" unique_id=662298799]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -246,3 +258,4 @@ sleep"
 
 [connection signal="pressed" from="Main_Start_Screen/Play_Button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Start_Screen/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Tutorial_node/Back" to="." method="_on_back_pressed"]
