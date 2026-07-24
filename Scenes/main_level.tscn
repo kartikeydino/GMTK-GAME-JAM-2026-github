@@ -149,6 +149,10 @@ text = "GO TO LEVEL 2"
 visible = false
 person_name = "failure"
 speech = "im a failure"
+choice_1_text = "im also a failure"
+choice_2_text = "me too"
+choice_3_text = "imagine"
+choice_4_text = "could never be me"
 area2d = NodePath("../../textbox_area")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]

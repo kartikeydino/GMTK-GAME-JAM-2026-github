@@ -293,7 +293,6 @@ offset_bottom = -248.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("1_psw4q")
-letter_speed = 1
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=51256602]
 layout_mode = 0
