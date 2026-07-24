@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://diw8cos5pp32x"]
 
+[ext_resource type="Script" uid="uid://oaf6gcwgv3qp" path="res://Scripts/blobmite_v_2.gd" id="1_7eehc"]
 [ext_resource type="Texture2D" uid="uid://c0omejaiuoroh" path="res://Art/blobmite_jump.png" id="1_avx5f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vdwo"]
@@ -103,6 +104,7 @@ animations = [{
 radius = 27.073973
 
 [node name="blobmite_v2" type="CharacterBody2D" unique_id=603381954]
+script = ExtResource("1_7eehc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922341763]
 sprite_frames = SubResource("SpriteFrames_7eehc")

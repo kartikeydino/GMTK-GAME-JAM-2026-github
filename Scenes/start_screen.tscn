@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://c5pvvrul7cdub"]
 
 [ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scripts/start_screen.gd" id="1_5e717"]
-[ext_resource type="Texture2D" uid="uid://roi7xo22xsem" path="res://Art/Play Button.png" id="4_5e717"]
 [ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_mtlf8"]
 [ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_mtlf8"]
 [ext_resource type="Texture2D" uid="uid://bj1l1iji41cxm" path="res://Art/blob_man_idle.png" id="5_nqnrp"]
@@ -23,6 +22,9 @@ corner_radius_bottom_left = 10
 expand_margin_left = 8.0
 expand_margin_top = 4.0
 expand_margin_bottom = 4.0
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mtlf8"]
+load_path = "res://.godot/imported/Play Button.png-bb3154657a88f7cf28a70e3bb50d9073.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5a7ho"]
 atlas = ExtResource("5_nqnrp")
@@ -143,7 +145,16 @@ offset_top = 361.0
 offset_right = 965.0
 offset_bottom = 569.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
-icon = ExtResource("4_5e717")
+icon = SubResource("CompressedTexture2D_mtlf8")
+
+[node name="Play_Button_Main" type="Button" parent="Main_Start_Screen" unique_id=1661803202]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 23.0
+offset_right = 1117.0
+offset_bottom = 231.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
+icon = SubResource("CompressedTexture2D_mtlf8")
 
 [node name="Label" type="Label" parent="Main_Start_Screen" unique_id=1598192107]
 layout_mode = 1
@@ -182,6 +193,7 @@ frame = 5
 frame_progress = 0.21183112
 
 [node name="Tutorial_node" type="Control" parent="." unique_id=2050742215]
+visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
@@ -257,5 +269,6 @@ might possibly maybe go to
 sleep"
 
 [connection signal="pressed" from="Main_Start_Screen/Play_Button" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Main_Start_Screen/Play_Button_Main" to="." method="_on_play_button_main_pressed"]
 [connection signal="pressed" from="Main_Start_Screen/Tutorial" to="." method="_on_tutorial_pressed"]
 [connection signal="pressed" from="Tutorial_node/Back" to="." method="_on_back_pressed"]

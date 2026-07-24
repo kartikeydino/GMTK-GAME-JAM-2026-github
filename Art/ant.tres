@@ -1,23 +1,23 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://div445hngc14u"]
 
-[ext_resource type="Texture2D" uid="uid://ch8j0iylhicy4" path="res://Art/ant walking gif.png" id="1_xk7ho"]
+[ext_resource type="Texture2D" uid="uid://ch8j0iylhicy4" path="res://Art/ant walking gif.png" id="1_xt1f5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_va7qo"]
-atlas = ExtResource("1_xk7ho")
+[sub_resource type="AtlasTexture" id="AtlasTexture_455fs"]
+atlas = ExtResource("1_xt1f5")
 region = Rect2(0, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_l7q6h"]
-atlas = ExtResource("1_xk7ho")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ob72c"]
+atlas = ExtResource("1_xt1f5")
 region = Rect2(0, 256, 256, 256)
 
 [resource]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_va7qo")
+"texture": SubResource("AtlasTexture_455fs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_l7q6h")
+"texture": SubResource("AtlasTexture_ob72c")
 }],
 "loop": 1,
 "name": &"walking",

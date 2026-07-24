@@ -30,5 +30,4 @@ func _on_ant_enemy_died() -> void:
 
 
 func _on_lvl_2_button_pressed() -> void:
-	pass # Replace with function body.
-	get_tree().change_scene_to_file("res://Scenes/blob_level_2.tscn")
+	pass

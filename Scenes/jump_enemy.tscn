@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://or72u7l12lvk"]
+
+[ext_resource type="Script" uid="uid://chn4aql6621tj" path="res://Scripts/enemy.gd" id="1_idrfx"]
+[ext_resource type="Texture2D" uid="uid://c4vf322lubmj8" path="res://Art/Jump_Enemy_Walking.png" id="2_idrfx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_usq68"]
+atlas = ExtResource("2_idrfx")
+region = Rect2(0, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g43il"]
+atlas = ExtResource("2_idrfx")
+region = Rect2(160, 0, 160, 160)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khlcy"]
+atlas = ExtResource("2_idrfx")
+region = Rect2(0, 160, 160, 160)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xt1f5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_usq68")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g43il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_khlcy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l3nfc"]
+radius = 33.0
+height = 108.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_va7qo"]
+radius = 17.0
+height = 116.0
+
+[node name="jump_enemy" type="Area2D" unique_id=1104532634]
+script = ExtResource("1_idrfx")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1140820137]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_xt1f5")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1576890831]
+position = Vector2(-9, 41)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_l3nfc")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=683998894]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1068112326]
+position = Vector2(1, -25)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_va7qo")
+debug_color = Color(0.96349245, 0, 0.5012339, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_hurtbox_area_entered"]

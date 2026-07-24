@@ -9,7 +9,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _on_play_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/game.tscn")
+	get_tree().change_scene_to_file("res://Scenes/blob_level_1.tscn")
+
 
 
 func _on_tutorial_pressed() -> void:
@@ -20,3 +21,7 @@ func _on_tutorial_pressed() -> void:
 func _on_back_pressed() -> void:
 	main_start_screen.visible = true
 	tutorial_node.visible = false
+
+
+func _on_play_button_main_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/main_level.tscn")

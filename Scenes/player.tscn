@@ -63,17 +63,8 @@ zoom = Vector2(0.8, 0.8)
 script = ExtResource("3_6t5aa")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2054968540]
-position = Vector2(1, 58)
+position = Vector2(1, 131)
 shape = SubResource("CircleShape2D_k8pp1")
-
-[node name="Label" type="Label" parent="." unique_id=1971185132]
-visible = false
-offset_left = -43.0
-offset_top = -110.0
-offset_right = 43.0
-offset_bottom = -65.0
-theme_override_font_sizes/font_size = 32
-text = "DEAD"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1557070190]
 position = Vector2(1, 45.5)
