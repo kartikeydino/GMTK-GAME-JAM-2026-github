@@ -11,7 +11,6 @@
 [ext_resource type="PackedScene" uid="uid://bft48pbm4rxut" path="res://Scenes/spider.tscn" id="8_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://bs74gl4m4ea7l" path="res://Art/New Piskel (97).png" id="9_42uki"]
 [ext_resource type="PackedScene" uid="uid://d3k3pt8qye3go" path="res://Scenes/box.tscn" id="10_42uki"]
-[ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="11_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="13_q0ycs"]
 
 [sub_resource type="Animation" id="Animation_t7v2y"]
@@ -183,15 +182,6 @@ texture = ExtResource("9_42uki")
 position = Vector2(397, 507)
 mass = 0.232
 inertia = 2.0
-
-[node name="Label" type="Label" parent="." unique_id=1219439790]
-offset_left = -146.0
-offset_top = 80.0
-offset_right = 804.0
-offset_bottom = 395.0
-theme_override_fonts/font = ExtResource("11_t7v2y")
-theme_override_font_sizes/font_size = 128
-text = "Goal: kill spider"
 
 [node name="textbox_area2d" parent="." unique_id=893048733 instance=ExtResource("13_q0ycs")]
 position = Vector2(971, -502)
