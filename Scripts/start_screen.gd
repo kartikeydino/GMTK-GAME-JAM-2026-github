@@ -15,3 +15,8 @@ func _on_play_pressed() -> void:
 func _on_tutorial_pressed() -> void:
 	main_start_screen.visible = false
 	tutorial_node.visible = true
+
+
+func _on_back_pressed() -> void:
+	main_start_screen.visible = true
+	tutorial_node.visible = false

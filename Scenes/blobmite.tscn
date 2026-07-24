@@ -103,7 +103,44 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_uyhha"]
 radius = 27.073973
 
-[node name="RigidBody2D" type="RigidBody2D" unique_id=1390932528]
+[sub_resource type="Animation" id="Animation_2q3gd"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_bgbfs"]
+resource_name = "blobmite projectile"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(500, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jjkjk"]
+_data = {
+&"RESET": SubResource("Animation_2q3gd"),
+&"blobmite projectile": SubResource("Animation_bgbfs")
+}
+
+[node name="blobmite" type="RigidBody2D" unique_id=1390932528]
 freeze = true
 script = ExtResource("1_cyd7m")
 
@@ -115,4 +152,7 @@ frame_progress = 0.14779246
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1882006530]
 shape = SubResource("CircleShape2D_uyhha")
-debug_color = Color(0.69710785, 0.49436784, 0, 0.41960785)
+debug_color = Color(1, 1, 1, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=783775560]
+libraries/ = SubResource("AnimationLibrary_jjkjk")
