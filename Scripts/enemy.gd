@@ -13,15 +13,14 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 		var player_bounce = area.get_parent()
 		player_bounce.bouncy_wouncy()
 		died.emit()
-		hurtbox_collision.disabled = true
-		collision.disabled = true
+		hurtbox_collision.call_deferred("is_disabled")
+		collision.call_deferred("is_disabled")
 		var tween = create_tween()
 		tween.tween_property(anim, "scale", Vector2(1, -1), 0.3)
 		tween.parallel().tween_property(anim, "global_position", Vector2(global_position.x, global_position.y + 70), 0.3)
 		speed = 0
 		await get_tree().create_timer(1.03).timeout
 		queue_free()
-
 func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player = body
