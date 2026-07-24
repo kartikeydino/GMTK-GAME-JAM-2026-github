@@ -5,6 +5,7 @@ extends CharacterBody2D
 const blobmite = preload("uid://b8pwc3yrhgv13")
 var blobmite_instantiate = blobmite.instantiate()
 @export var antler_enemy: Area2D
+@onready var animation_player: AnimationPlayer = $blobmite_v2/AnimationPlayer
 var SPEED = 900.0
 const normal_speed = 900
 const JUMP_VELOCITY = -800.0
@@ -59,6 +60,9 @@ func _physics_process(delta: float) -> void:
 		blobmite_instantiate.ant_enemy = antt_enemy
 		get_tree().current_scene.add_child(blobmite_instantiate)
 		blobmite_instantiate.transform.origin = Vector2(global_position.x, global_position.y)
+	
+	if Input.is_action_just_pressed("climb"):
+		animation_player.play("blob shot")
 
 func player():
 	pass 

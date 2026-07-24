@@ -103,7 +103,7 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_7601c"]
 radius = 27.073973
 
-[node name="blobmite_v2" type="CharacterBody2D" unique_id=603381954]
+[node name="blobmite_v2" type="Area2D" unique_id=950113351]
 script = ExtResource("1_7eehc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1922341763]
