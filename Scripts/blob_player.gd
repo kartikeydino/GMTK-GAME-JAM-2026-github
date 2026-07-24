@@ -5,7 +5,7 @@ const lettuce_cursor = preload("uid://bdbnpouilm10c")
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 const blobmite = preload("uid://b06uygu0xe6ff")
 var blobmite_instantiate = blobmite.instantiate()
-
+@export var antler_enemy: Area2D
 const SPEED = 900.0
 const JUMP_VELOCITY = -800.0
 var dying: bool = false
@@ -46,6 +46,9 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.flip_h = true
 		else:
 			anim_sprite.flip_h = false
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
+		blobmite_instantiate.transform.origin = Vector2(global_position.x, global_position.y)
+		get_tree().current_scene.add_child(blobmite_instantiate)
 
 func player():
 	pass 

@@ -22,8 +22,9 @@ sources/0 = SubResource("TileSetAtlasSource_wowpa")
 [node name="blob_level_1" type="Node2D" unique_id=685918000]
 script = ExtResource("1_2gklx")
 
-[node name="Blob_Player" parent="." unique_id=1265756167 instance=ExtResource("2_lhdnt")]
+[node name="Blob_Player" parent="." unique_id=1265756167 node_paths=PackedStringArray("antler_enemy") instance=ExtResource("2_lhdnt")]
 position = Vector2(0, -200)
+antler_enemy = NodePath("../Ant Enemy")
 
 [node name="Death_Label" type="Label" parent="." unique_id=75306420]
 offset_left = -487.0
