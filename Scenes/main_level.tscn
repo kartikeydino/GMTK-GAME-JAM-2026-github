@@ -1,10 +1,15 @@
 [gd_scene format=4 uid="uid://bdphsnihw2ro5"]
 
+[ext_resource type="Script" uid="uid://jv4c8e852kbe" path="res://Scripts/main_level.gd" id="1_236hc"]
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://or72u7l12lvk" path="res://Scenes/jump_enemy.tscn" id="3_5erdv"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="3_qbrl8"]
+[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="4_a2ia3"]
+[ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_236hc"]
+[ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_lwkuy"]
 
 [node name="Main_Level_1" type="Node2D" unique_id=949330406]
+script = ExtResource("1_236hc")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1694715195]
 tile_map_data = PackedByteArray("AAD9/wYAAQABAAAAAAD+/wYAAQABAAAAAAD//wYAAQABAAAAAAAAAAYAAQABAAAAAAABAAYAAQABAAAAAAACAAYAAQABAAAAAAADAAYAAQABAAAAAAAGAAYAAQABAAAAAAAGAAcAAQACAAEAAAAGAAgAAQACAAIAAAAFAAgAAQABAAEAAAAEAAgAAQABAAEAAAADAAgAAQABAAIAAAACAAgAAQABAAIAAAABAAgAAQABAAIAAAAAAAgAAQABAAIAAAD//wgAAQABAAIAAAD+/wgAAQABAAIAAAD9/wgAAQABAAIAAAD9/wcAAQABAAEAAAD+/wcAAQABAAEAAAD//wcAAQABAAEAAAAAAAcAAQABAAEAAAABAAcAAQABAAEAAAACAAcAAQABAAEAAAADAAcAAQABAAEAAAAEAAcAAQABAAEAAAAFAAcAAQABAAEAAAD6/wYAAQAAAAAAAAD6/wcAAQAAAAEAAAD6/wgAAQAAAAIAAAD7/wYAAQABAAAAAAD8/wYAAQABAAAAAAD7/wgAAQABAAIAAAD8/wgAAQABAAIAAAD7/wcAAQABAAEAAAD8/wcAAQABAAEAAAAJAAMAAQAAAAAAAAAJAAQAAQAAAAEAAAAJAAUAAQAAAAEAAAAJAAYAAQACAAAAAAAJAAcAAQABAAEAAAAJAAgAAQABAAIAAAAKAAMAAQABAAAAAAAKAAQAAQABAAEAAAAKAAUAAQABAAEAAAAKAAYAAQABAAEAAAAKAAcAAQABAAEAAAAKAAgAAQABAAIAAAALAAMAAQACAAAAAAALAAQAAQACAAEAAAALAAUAAQACAAEAAAALAAYAAQACAAEAAAALAAcAAQACAAEAAAALAAgAAQACAAIAAAAFAAYAAQABAAAAAAAEAAYAAQABAAAAAAAHAAYAAQABAAAAAAAIAAYAAQABAAAAAAAHAAcAAQABAAEAAAAHAAgAAQABAAEAAAAIAAcAAQACAAEAAAAIAAgAAQACAAIAAAA=")
@@ -19,7 +24,78 @@ permanent_y_value = 415
 position = Vector2(226, 331)
 scale = Vector2(0.5, 0.5)
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1605561644]
+[node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1329141905]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Jump_Buffer_Area" unique_id=1329141905]
 polygon = PackedVector2Array(-466, 481, 704, 467, 704, 243, 937, 238, 951, 732, -475, 740, -467, 468)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
+
+[node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("4_a2ia3")]
+z_index = 10
+position = Vector2(736, 24)
+timer_time = 10.0
+
+[node name="Beating the game label" type="Label" parent="CanvasLayer" unique_id=620366982]
+process_mode = 1
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = 148.0
+offset_right = 187.0
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.89234334, 0.98048156, 1.540184e-06, 1)
+theme_override_fonts/font = ExtResource("5_236hc")
+theme_override_font_sizes/font_size = 40
+text = "Great job! 
+You beat the game!"
+horizontal_alignment = 1
+
+[node name="Losing the game label" type="Label" parent="CanvasLayer" unique_id=1566321110]
+process_mode = 1
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -219.5
+offset_top = 148.0
+offset_right = 219.5
+offset_bottom = 261.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0, 0.83137256, 0, 1)
+theme_override_fonts/font = ExtResource("5_236hc")
+theme_override_font_sizes/font_size = 40
+text = "Better luck next time...
+You lost your jump..."
+horizontal_alignment = 1
+
+[node name="Lvl 2 button" type="Button" parent="CanvasLayer" unique_id=70193146]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -227.0
+offset_top = 118.0
+offset_right = 232.0
+offset_bottom = 214.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_236hc")
+theme_override_font_sizes/font_size = 64
+text = "GO TO LEVEL 2"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
+stream = ExtResource("7_lwkuy")
+bus = &"VFX"
+
+[connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]

@@ -5,12 +5,16 @@ var speed = 6
 @export var player_node: CharacterBody2D
 @export var permanent_y_value: int
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
+@onready var collision: CollisionShape2D = $CollisionShape2D
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.has_method("kill")):
 		var player_bounce = area.get_parent()
 		player_bounce.bouncy_wouncy()
 		died.emit()
+		hurtbox_collision.disabled = true
+		collision.disabled = true
 		var tween = create_tween()
 		tween.tween_property(anim, "scale", Vector2(1, -1), 0.3)
 		tween.parallel().tween_property(anim, "global_position", Vector2(global_position.x, global_position.y + 70), 0.3)

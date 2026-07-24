@@ -32,8 +32,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
 		velocity.y = jump
 	
-	if Input.is_action_pressed("phase"):
-		animated_sprite_2d.modulate.a = 200
 
 	var direction := Input.get_axis("left", "right")
 	if direction and has_walk == true:
@@ -52,7 +50,7 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.15).timeout
 		speed = normal_speed
 	
-	#if velocity.x >= 300 && is_on_wall_only():
+	#if velocity.x >= 500 && is_on_wall():
 		#animated_sprite_2d.modulate.a = 200
 		#speed = 2400.0
 		#await get_tree().create_timer(1).timeout 
