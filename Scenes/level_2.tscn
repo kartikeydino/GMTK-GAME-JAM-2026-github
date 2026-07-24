@@ -62,8 +62,6 @@ tile_set = ExtResource("2_uhnj4")
 position = Vector2(60, 489)
 scale = Vector2(0.5, 0.5)
 
-[node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
-
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
 
 [node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("5_ait6c")]
