@@ -13,3 +13,4 @@ func _on_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(0.2).timeout
 		player.speed =  player.normal_speed
 		player.collision_shape.disabled = false 
+		player.position.y += -20
