@@ -9,19 +9,17 @@ extends CharacterBody2D
 @export var speed = 300.0 
 @export var jump = -400.0 
 @export var downward_force = 1.3 
-@export var dash_speed = 1000.0 
 @export var dash_counter = 0 
 #Connections
-@onready var jump_buffer : Area2D
+@onready var jump_buffer : Area2D = $"Jump Buffer"
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_polygon_2d: CollisionShape2D = $CollisionPolygon2D
+@onready var timer: Timer = $Timer
 
 
 func _physics_process(delta: float) -> void:
 	if not jump_buffer.has_overlapping_areas():
-		velocity.y += get_gravity() * delta * downward_force
-	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
-		velocity.y += jump * delta
+		velocity += get_gravity() * delta * downward_force
 	var direction := Input.get_axis("left", "right")
 	if direction and has_walk == true:
 		velocity.x = direction * speed
@@ -29,26 +27,30 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = 0 
 		animated_sprite_2d.play("default")
-	other_movement()
-	move_and_slide()
-func other_movement():
 	if Input.is_action_just_pressed("up") and has_jump == true and jump_buffer.has_overlapping_areas():
 		velocity.y = jump
+	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
+		position.y += jump * delta
 	if Input.is_action_just_pressed("dash") and has_dash == true:
-		speed = dash_speed 
+		speed = 4000.0 
+		timer.start()
+		velocity.x = direction * speed 
 		dash_counter += 1 
 		print(dash_counter)
-		await get_tree().create_timer(0.12).timeout
-		speed = 300.0 
 	else: 
 		speed = 300.0 
-	if dash_counter == 3:
+	if dash_counter == 3 and Input.is_action_just_pressed("phase"):
 		collision_polygon_2d.disabled = true 
 		animated_sprite_2d.modulate.a = 200 
-		speed = (dash_speed * 2)
-		await get_tree().create_timer(0.12).timeout 
+		speed = 2400.0
+		await get_tree().create_timer(0.3).timeout 
 		speed = 300.0 
 	else:
 		collision_polygon_2d.disabled = false
 		animated_sprite_2d.modulate.a = 255  
 		speed = 300.0
+	move_and_slide()
+
+
+func _on_timer_timeout() -> void:
+	speed = 300.0 
