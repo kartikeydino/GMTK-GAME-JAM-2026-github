@@ -10,8 +10,7 @@ var speed = 6
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.has_method("kill")):
-		var player_bounce = area.get_parent()
-		player_bounce.bouncy_wouncy()
+		player_node.bouncy_wouncy()
 		died.emit()
 		hurtbox_collision.call_deferred("is_disabled")
 		collision.call_deferred("is_disabled")
