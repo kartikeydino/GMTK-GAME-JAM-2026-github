@@ -27,7 +27,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
-radius = 4.0
+radius = 7.0
 
 [node name="Spider" type="Area2D" unique_id=2052655370]
 script = ExtResource("1_gedd4")
@@ -37,11 +37,10 @@ position = Vector2(-1, -1.38)
 scale = Vector2(0.08, 0.09078125)
 sprite_frames = SubResource("SpriteFrames_k8pp1")
 autoplay = "default"
-frame_progress = 0.19175225
+frame_progress = 0.8499754
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069629931]
 z_index = 3
-position = Vector2(0, 5)
 shape = SubResource("CircleShape2D_k8pp1")
 debug_color = Color(0.99995106, 0, 0.111325406, 0.41960785)
 
