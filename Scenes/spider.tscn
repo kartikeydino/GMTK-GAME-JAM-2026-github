@@ -29,17 +29,17 @@ animations = [{
 radius = 4.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rkspb"]
-radius = 5.0
+radius = 6.0
 
 [node name="Spider" type="Area2D" unique_id=2052655370]
 script = ExtResource("1_gedd4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1019180484]
-position = Vector2(-1, 0)
-scale = Vector2(0.08, 0.08)
+position = Vector2(-1, -1.38)
+scale = Vector2(0.08, 0.09078125)
 sprite_frames = SubResource("SpriteFrames_k8pp1")
 autoplay = "default"
-frame_progress = 0.7476239
+frame_progress = 0.083645396
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2069629931]
 z_index = 3

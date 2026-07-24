@@ -1,27 +1,61 @@
-[gd_scene format=3 uid="uid://du7yo6glsxkg6"]
+[gd_scene format=4 uid="uid://du7yo6glsxkg6"]
 
 [ext_resource type="Script" uid="uid://jv4c8e852kbe" path="res://Scripts/main_level.gd" id="1_2mgoq"]
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="2_uhnj4"]
-[ext_resource type="PackedScene" uid="uid://or72u7l12lvk" path="res://Scenes/jump_enemy.tscn" id="3_42uki"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="4_t7v2y"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="5_ait6c"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_vcilj"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_bl0du"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_q0ycs"]
+[ext_resource type="PackedScene" uid="uid://bft48pbm4rxut" path="res://Scenes/spider.tscn" id="8_uhnj4"]
+[ext_resource type="Texture2D" uid="uid://bs74gl4m4ea7l" path="res://Art/New Piskel (97).png" id="9_42uki"]
+
+[sub_resource type="Animation" id="Animation_t7v2y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(872, 365)]
+}
+
+[sub_resource type="Animation" id="Animation_ait6c"]
+resource_name = "moving"
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(872, 365), Vector2(872, 530)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vcilj"]
+_data = {
+&"RESET": SubResource("Animation_t7v2y"),
+&"moving": SubResource("Animation_ait6c")
+}
 
 [node name="Main_Level_1" type="Node2D" unique_id=949330406]
 script = ExtResource("1_2mgoq")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1694715195]
+tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAIAAAABAAcAAQABAAAAAAABAAgAAQABAAEAAAABAAkAAQABAAIAAAACAAcAAQACAAAAAAACAAgAAQACAAEAAAACAAkAAQACAAIAAAADAAcAAQAAAAAAAAADAAgAAQAAAAEAAAADAAkAAQAAAAIAAAAEAAcAAQABAAAAAAAEAAgAAQABAAEAAAAEAAkAAQABAAIAAAAFAAcAAQACAAAAAAAFAAgAAQACAAEAAAAFAAkAAQACAAIAAAAGAAcAAQAAAAAAAAAGAAgAAQAAAAEAAAAGAAkAAQAAAAIAAAAHAAcAAQABAAAAAAAHAAgAAQABAAEAAAAHAAkAAQABAAIAAAAIAAcAAQACAAAAAAAIAAgAAQACAAEAAAAIAAkAAQACAAIAAAAJAAcAAQAAAAAAAAAJAAgAAQAAAAEAAAAJAAkAAQAAAAIAAAAKAAcAAQABAAAAAAAKAAgAAQABAAEAAAAKAAkAAQABAAIAAAALAAcAAQACAAAAAAALAAgAAQACAAEAAAALAAkAAQACAAIAAAAMAAcAAQAAAAAAAAAMAAgAAQAAAAEAAAAMAAkAAQAAAAIAAAANAAcAAQABAAAAAAANAAgAAQABAAEAAAANAAkAAQABAAIAAAAOAAcAAQACAAAAAAAOAAgAAQACAAEAAAAOAAkAAQACAAIAAAAPAAcAAQAAAAAAAAAPAAgAAQAAAAEAAAAPAAkAAQAAAAIAAAAQAAcAAQABAAAAAAAQAAgAAQABAAEAAAAQAAkAAQABAAIAAAARAAcAAQACAAAAAAARAAgAAQACAAEAAAARAAkAAQACAAIAAAAKAAAAAQABAAEAAAAKAAEAAQABAAIAAAAKAAIAAQABAAEAAAALAAAAAQACAAEAAAALAAEAAQACAAIAAAALAAIAAQACAAEAAAAKAP//AQABAAIAAAALAP//AQACAAIAAAAKAP3/AQABAAEAAAAKAP7/AQABAAIAAAALAP3/AQACAAEAAAALAP7/AQACAAIAAAAKAPz/AQABAAAAAAALAPz/AQACAAAAAAALAAMAAQAAAAAAAAAKAAMAAQAAAAAAAAD9/wcAAQACAAAAAAD9/wgAAQACAAEAAAD9/wkAAQACAAIAAAD+/wcAAQABAAAAAAD+/wgAAQABAAEAAAD+/wkAAQABAAIAAAD//wcAAQACAAAAAAD//wgAAQACAAEAAAD//wkAAQACAAIAAAD6/wcAAQAAAAIAAAD6/wgAAQAAAAEAAAD6/wkAAQAAAAIAAAD7/wcAAQABAAIAAAD7/wgAAQAAAAEAAAD7/wkAAQAAAAIAAAD8/wcAAQACAAIAAAD8/wgAAQABAAEAAAD8/wkAAQABAAIAAAD7/wQAAQABAAIAAAD7/wUAAQABAAAAAAD7/wYAAQABAAEAAAD8/wQAAQACAAIAAAD8/wUAAQACAAAAAAD8/wYAAQACAAEAAAD9/wQAAQAAAAIAAAD9/wUAAQACAAEAAAD9/wYAAQACAAIAAAD6/wUAAQAAAAAAAAD6/wYAAQAAAAEAAAD6/wIAAQAAAAIAAAD6/wMAAQAAAAEAAAD6/wQAAQAAAAIAAAD7/wIAAQABAAIAAAD7/wMAAQABAAEAAAD8/wIAAQACAAIAAAD8/wMAAQACAAEAAAD9/wIAAQACAAIAAAD9/wMAAQAAAAEAAAD7/wAAAQABAAIAAAD7/wEAAQABAAEAAAD8/wAAAQACAAIAAAD8/wEAAQACAAEAAAD9/wAAAQACAAIAAAD9/wEAAQACAAEAAAD6/wAAAQAAAAIAAAD6/wEAAQAAAAEAAAD7//7/AQABAAIAAAD7////AQABAAEAAAD8//7/AQACAAIAAAD8////AQACAAEAAAD9//7/AQACAAIAAAD9////AQACAAEAAAD6//7/AQAAAAIAAAD6////AQAAAAEAAAD7//z/AQAAAAEAAAD7//3/AQAAAAIAAAD8//z/AQABAAEAAAD8//3/AQABAAIAAAD9//z/AQACAAEAAAD9//3/AQACAAIAAAD6//z/AQAAAAEAAAD6//3/AQAAAAIAAAD6//v/AQAAAAAAAAD7//v/AQAAAAAAAAD8//v/AQABAAAAAAD9//v/AQACAAAAAADh/wAAAQACAAAAAADh/wEAAQACAAEAAADh/wIAAQACAAIAAADi/wAAAQABAAAAAADi/wEAAQABAAEAAADi/wIAAQABAAIAAADj/wAAAQACAAAAAADj/wEAAQACAAEAAADj/wIAAQACAAIAAADk/wAAAQAAAAAAAADk/wEAAQAAAAEAAADk/wIAAQAAAAIAAADl/wAAAQABAAAAAADl/wEAAQABAAEAAADl/wIAAQABAAIAAADm/wAAAQAAAAAAAADm/wEAAQAAAAEAAADm/wIAAQAAAAIAAADf/wAAAQACAAAAAADf/wEAAQACAAEAAADf/wIAAQACAAIAAADg/wAAAQABAAAAAADg/wEAAQABAAEAAADg/wIAAQABAAIAAADd/wAAAQAAAAAAAADd/wEAAQAAAAEAAADd/wIAAQAAAAIAAADe/wAAAQABAAAAAADe/wEAAQABAAEAAADe/wIAAQABAAIAAADd//3/AQAAAAEAAADd//7/AQAAAAIAAADd////AQAAAAIAAADe//3/AQABAAEAAADe//7/AQABAAIAAADe////AQABAAIAAADf//3/AQACAAEAAADf//7/AQACAAIAAADf////AQACAAIAAADd//z/AQAAAAIAAADe//z/AQABAAIAAADf//z/AQACAAIAAADd//r/AQAAAAAAAADd//v/AQAAAAEAAADe//r/AQABAAAAAADe//v/AQABAAEAAADf//r/AQACAAAAAADf//v/AQACAAEAAADm////AQAAAAAAAADn////AQABAAAAAADn/wAAAQABAAAAAADn/wEAAQABAAEAAADo////AQACAAAAAADo/wAAAQACAAAAAADo/wEAAQACAAEAAADn/wIAAQABAAIAAADo/wIAAQACAAIAAADm//z/AQAAAAIAAADm//3/AQAAAAEAAADm//7/AQAAAAIAAADn//z/AQABAAIAAADn//3/AQABAAEAAADn//7/AQABAAIAAADo//z/AQACAAIAAADo//3/AQACAAEAAADo//7/AQACAAIAAADm//r/AQAAAAAAAADm//v/AQAAAAEAAADn//r/AQABAAAAAADn//v/AQABAAEAAADo//r/AQACAAAAAADo//v/AQACAAEAAADv//3/AQAAAAAAAADv//7/AQAAAAEAAADv////AQAAAAIAAADw//3/AQABAAAAAADw//7/AQABAAEAAADw////AQABAAIAAADx//3/AQACAAAAAADx//7/AQACAAEAAADx////AQACAAIAAADp//3/AQAAAAAAAADp//7/AQAAAAEAAADp////AQAAAAIAAADq//3/AQABAAAAAADq//7/AQABAAEAAADq////AQABAAIAAADr//3/AQACAAAAAADr//7/AQACAAEAAADr////AQACAAIAAADs//3/AQAAAAAAAADs//7/AQAAAAEAAADs////AQAAAAIAAADt//3/AQABAAAAAADt//7/AQABAAEAAADt////AQABAAIAAADu//3/AQACAAAAAADu//7/AQACAAEAAADu////AQACAAIAAAA=")
 tile_set = ExtResource("2_uhnj4")
 
-[node name="jump_enemy" parent="." unique_id=1104532634 node_paths=PackedStringArray("player_node") instance=ExtResource("3_42uki")]
-position = Vector2(-7, 415)
-player_node = NodePath("../Player")
-permanent_y_value = 415
-
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("4_t7v2y")]
-position = Vector2(226, 331)
+position = Vector2(60, 489)
 scale = Vector2(0.5, 0.5)
 
 [node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
@@ -97,17 +131,39 @@ bus = &"VFX"
 
 [node name="Icon" type="Sprite2D" parent="." unique_id=1091444513]
 z_index = -3
-position = Vector2(-1394, 73)
+position = Vector2(-2287, -67)
 texture = ExtResource("8_q0ycs")
 
 [node name="Label" type="Label" parent="Icon" unique_id=200296845]
-offset_left = -74.0
-offset_top = -105.0
-offset_right = 126.0
-offset_bottom = -67.0
-text = "My blob left me. 😭"
+offset_left = -133.0
+offset_top = -117.0
+offset_right = 200.0
+offset_bottom = -68.0
+text = "Blobs were created from the 
+accident and people were just okay with it?"
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D" type="Area2D" parent="." unique_id=154763287]
 
-[connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1971408797]
+polygon = PackedVector2Array(-165, -387, -161, 580, 1419, 575, 1422, 796, -476, 833, -466, -394, -193, -417, -178, -405)
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1606420616]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D2" unique_id=398964139]
+polygon = PackedVector2Array(-1111, -238, -1110, -3, -1809, -2, -1814, 247, -2755, 241, -2760, -486, -2539, -486, -2536, -12, -2061, -13, -2054, -486, -1837, -491, -1821, -257)
+
+[node name="Spider" parent="." unique_id=2052655370 instance=ExtResource("8_uhnj4")]
+z_index = -2
+position = Vector2(872, 365)
+scale = Vector2(5, 5)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Spider" unique_id=537111130]
+libraries/ = SubResource("AnimationLibrary_vcilj")
+autoplay = &"moving"
+
+[node name="NewPiskel(97)" type="Sprite2D" parent="." unique_id=1545457498]
+z_index = -4
+position = Vector2(882, 443.5)
+scale = Vector2(1, 1.5195311)
+texture = ExtResource("9_42uki")
