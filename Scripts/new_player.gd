@@ -22,10 +22,7 @@ func _ready() -> void:
 	speed = normal_speed
 
 func _physics_process(delta: float) -> void:
-	while walking:
-		print(get_real_velocity())
-		print(Time)
-		await get_tree().create_timer(5).timeout
+
 	if is_on_floor() && walking == false:
 		animated_sprite_2d.play("idle")
 		
