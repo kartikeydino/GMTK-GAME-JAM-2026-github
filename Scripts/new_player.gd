@@ -11,7 +11,6 @@ extends CharacterBody2D
 @export var dash_speed = 1200.0
 @export var jump = -800.0 
 @export var downward_force = 1.3 
-@export var dash_counter = 0 
 var walking: bool = false
 #Connections
 @onready var jump_buffer : Area2D = $"Jump Buffer"
@@ -51,8 +50,6 @@ func _physics_process(delta: float) -> void:
 		print(get_real_velocity())
 		await get_tree().create_timer(1).timeout
 		speed = normal_speed
-		dash_counter += 1
-		print(dash_counter)
 	
 	if velocity.x >= 300 && is_on_wall():
 		collision_polygon_2d.disabled = true
