@@ -53,26 +53,6 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.15).timeout
 		speed = normal_speed
 		
-
-func _process(_delta: float) -> void:
-	if velocity.x >= 3000 || velocity.x <= -3000 and is_on_wall_only() and not is_on_floor() and glitching == false:
-		glitching = true
-		collision_shape.disabled= true
-		has_jump = false
-		has_wall_climb = false
-		speed = 0
-		await get_tree().create_timer(0.1).timeout
-		set_physics_process(false)
-		await get_tree().create_timer(0.1).timeout
-		speed *= 4
-		glitching = false
-		has_jump = true
-		has_wall_climb = true
-		set_physics_process(true)
-		await get_tree().create_timer(1).timeout
-		collision_shape.disabled = false
-		await get_tree().create_timer(5).timeout
-		speed = normal_speed
 func player():
 	pass 
 

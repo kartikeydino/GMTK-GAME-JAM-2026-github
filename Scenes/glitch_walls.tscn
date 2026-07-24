@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://3hkwseb1r02n"]
+
+[ext_resource type="Script" uid="uid://riqig2buta28" path="res://Scripts/glitch_walls.gd" id="1_3ms2l"]
+
+[node name="glitch_walls" type="Area2D" unique_id=7530591]
+script = ExtResource("1_3ms2l")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

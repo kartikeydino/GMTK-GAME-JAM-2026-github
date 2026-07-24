@@ -10,9 +10,13 @@
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_lwkuy"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_tqiex"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="10_f3gli"]
+[ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="11_2jcip"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyhha"]
 size = Vector2(454, 334)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
+size = Vector2(136.5, 205)
 
 [node name="Main_Level_1" type="Node2D" unique_id=949330406]
 script = ExtResource("1_236hc")
@@ -134,6 +138,12 @@ metadata/_edit_use_anchors_ = true
 
 [node name="textbox_area" parent="." unique_id=893048733 instance=ExtResource("10_f3gli")]
 position = Vector2(-1239, -143)
+
+[node name="glitch_walls" parent="." unique_id=7530591 instance=ExtResource("11_2jcip")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="glitch_walls" unique_id=1385126141]
+position = Vector2(725.25, 349.5)
+shape = SubResource("RectangleShape2D_8ltfk")
 
 [connection signal="died" from="jump_enemy" to="." method="_on_jump_enemy_died"]
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="." method="_on_lvl_2_button_pressed"]
