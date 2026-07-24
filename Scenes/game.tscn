@@ -1,14 +1,11 @@
 [gd_scene format=3 uid="uid://bcjvxo0eax1wg"]
 
 [ext_resource type="Script" uid="uid://brxumclef3704" path="res://Scripts/game.gd" id="1_3dryh"]
-[ext_resource type="PackedScene" uid="uid://boq0qnq8asvbo" path="res://Scenes/blob_level_1.tscn" id="1_ebmjs"]
 [ext_resource type="AudioStream" uid="uid://n4i1b5tbhel2" path="res://Music/gmtk game jam main theme.mp3" id="2_qxrlw"]
-[ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_wowpa"]
+[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_wrm1d"]
 
 [node name="Game" type="Node2D" unique_id=692546951]
 script = ExtResource("1_3dryh")
-
-[node name="Level_1" parent="." unique_id=685918000 instance=ExtResource("1_ebmjs")]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=11887227]
 stream = ExtResource("2_qxrlw")
@@ -17,18 +14,5 @@ bus = &"BG music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1029339173]
 
-[node name="Mute" type="Button" parent="CanvasLayer" unique_id=228477511]
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -243.0
-offset_top = -140.0
-grow_horizontal = 0
-grow_vertical = 0
-theme_override_fonts/font = ExtResource("4_wowpa")
-theme_override_font_sizes/font_size = 64
-text = "MUTE"
-
-[connection signal="pressed" from="CanvasLayer/Mute" to="." method="_on_mute_pressed"]
+[node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("3_wrm1d")]
+timer_time = 10.0

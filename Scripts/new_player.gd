@@ -1,13 +1,14 @@
 extends CharacterBody2D
 
+var dying = false
 #Abilities
 @export var has_jump: bool = true
 @export var has_dash: bool = true
 @export var has_wall_climb: bool = true 
 @export var has_walk: bool = true 
 #Movement 
-@export var speed = 400.0 
-@export var normal_speed = 400.0
+@export var speed = 600.0 
+@export var normal_speed = 600.0
 @export var dash_speed = 1200.0
 @export var jump = -800.0 
 @export var downward_force = 1.3 
@@ -21,15 +22,18 @@ func _ready() -> void:
 	speed = normal_speed
 
 func _physics_process(delta: float) -> void:
-
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
 	if is_on_floor() && walking == false:
 		animated_sprite_2d.play("idle")
 		
-	if not jump_buffer.has_overlapping_areas():
-		velocity += get_gravity() * delta * downward_force
+	#if not jump_buffer.has_overlapping_areas():
+		#velocity += get_gravity() * delta * downward_force
 	
-	if Input.is_action_just_pressed("up") and has_jump and jump_buffer.has_overlapping_areas():
+	if Input.is_action_just_pressed("up") and has_jump:
 		velocity.y = jump
+		
 	if Input.is_action_pressed("climb") and has_wall_climb and is_on_wall():
 		position.y += jump * delta
 
@@ -64,3 +68,18 @@ func _physics_process(delta: float) -> void:
 		collision_polygon_2d.disabled = false
 		animated_sprite_2d.modulate.a = 255  
 		speed = normal_speed
+		
+
+func player():
+	pass 
+
+func bouncy_wouncy():
+	velocity.y = -300.0
+	
+func deadtp():
+	global_position = Vector2(0, -4800)
+	dying = true
+	
+func starttp():
+	global_position = Vector2(0,-200)
+	dying = false
