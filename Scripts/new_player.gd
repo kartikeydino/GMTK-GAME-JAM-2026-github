@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("up") and has_jump == true and $Area2D.has_overlapping_areas():
 		velocity.y = jump
+		##anay, there is a glitch with wall_climb... its working with the jump button
 	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
 		velocity.y = jump
 	
@@ -43,26 +44,22 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		walking = false
 		animated_sprite_2d.play("idle")
+	
 	move_and_slide()
-
-		
-	if Input.is_action_just_pressed("dash") and has_dash == true:
+	
+	if Input.is_action_just_pressed("dash") and has_dash:
 		speed = dash_speed
-		print(get_real_velocity())
 		await get_tree().create_timer(1).timeout
 		speed = normal_speed
 	
-	if velocity.x >= 300 && is_on_wall():
-		animated_sprite_2d.modulate.a = 200
-		await get_tree().create_timer(0.05).timeout  
-		speed = 2400.0
-		await get_tree().create_timer(1).timeout 
-		speed = normal_speed
-	else:
-		animated_sprite_2d.modulate.a = 255  
-		speed = normal_speed
-	move_and_slide()
-
+	#if velocity.x >= 300 && is_on_wall_only():
+		#animated_sprite_2d.modulate.a = 200
+		#speed = 2400.0
+		#await get_tree().create_timer(1).timeout 
+		#speed = normal_speed
+	#else:
+		#animated_sprite_2d.modulate.a = 255  
+		#speed = normal_speed
 		
 
 func player():

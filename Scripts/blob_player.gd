@@ -50,6 +50,7 @@ func _physics_process(delta: float) -> void:
 			anim_sprite.flip_h = true
 		else:
 			anim_sprite.flip_h = false
+
 	if (can_dash) && Input.is_action_just_pressed("dash"):
 		SPEED *= 2
 		await get_tree().create_timer(1).timeout
