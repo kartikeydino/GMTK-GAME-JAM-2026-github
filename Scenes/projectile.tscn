@@ -31,11 +31,12 @@ radius = 73.061615
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2055158299]
 texture_filter = 1
+position = Vector2(400, 0)
 sprite_frames = SubResource("SpriteFrames_k8pp1")
 autoplay = "default"
-frame_progress = 0.8811358
+frame_progress = 0.2873109
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814457686]
-position = Vector2(6, 6)
+position = Vector2(406, 6)
 shape = SubResource("CircleShape2D_k8pp1")
 debug_color = Color(0.81622505, 0.40701932, 0, 0.41960785)
