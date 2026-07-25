@@ -1,11 +1,15 @@
 [gd_scene format=3 uid="uid://b1brldih3b34x"]
 
+[ext_resource type="Texture2D" uid="uid://dlygkhp1vp2s8" path="res://Art/New Piskel - 2026-07-24T172334.841.png" id="1_sa2bq"]
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
 radius = 8.0
 
 [node name="Screw" type="Area2D" unique_id=25527946]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=360566645]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_sa2bq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2082861420]
 shape = SubResource("CircleShape2D_k8pp1")

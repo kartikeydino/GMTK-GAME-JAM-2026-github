@@ -11,13 +11,13 @@ region_enabled = true
 region_rect = Rect2(1.9752502, 29.833311, 237.57274, 213.10457)
 
 [node name="Screw" parent="." unique_id=25527946 instance=ExtResource("2_cxrok")]
-position = Vector2(92, -67)
+position = Vector2(98, -75)
 
 [node name="Screw2" parent="." unique_id=1797737615 instance=ExtResource("2_cxrok")]
-position = Vector2(96, 56)
+position = Vector2(100, 48)
 
 [node name="Screw3" parent="." unique_id=1838465447 instance=ExtResource("2_cxrok")]
-position = Vector2(-94, 59)
+position = Vector2(-85, 49)
 
 [node name="Screw4" parent="." unique_id=1074081238 instance=ExtResource("2_cxrok")]
-position = Vector2(-94, -72)
+position = Vector2(-84, -78)
