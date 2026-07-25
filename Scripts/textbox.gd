@@ -3,6 +3,7 @@ extends Control
 @onready var text: Label = $Text
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
 @onready var anim_player_2: AnimationPlayer = $AnimationPlayer2
+@onready var anim_player_3: AnimationPlayer = $AnimationPlayer3
 @onready var choice1: Button = $Choice_1
 @onready var choice2: Button = $Choice_2
 @onready var choice3: Button = $Choice_3
@@ -27,6 +28,8 @@ var next_counter: int = 0
 func _ready() -> void:
 	person.visible_ratio = 0
 	text.visible_ratio = 0
+	person.text = person_name + ":"
+	text.text = speech
 	choice1.text = choice_1_text
 	choice2.text = choice_2_text
 	choice3.text = choice_3_text
@@ -35,8 +38,6 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if area2d.player_entered == true:
-		person.text = person_name + ":"
-		text.text = speech
 		self.visible = true
 		if person.visible_ratio <1 || text.visible_ratio < 1:
 			anim_player.play("text_for_textbox")
@@ -45,21 +46,23 @@ func _process(delta: float) -> void:
 			next.disabled = false
 			
 	if next_counter == 1:
-		person.text = ""
-		person.text = ""
 		buttons_activate()
 		
 	elif next_counter == 2:
-		if person.visible_ratio <1 || text.visible_ratio < 1:
-			text.text = speech
-			buttons_disable()
-			anim_player.play("text_for_textbox")
-			next.disabled = true
+		buttons_disable()
+		person.visible_ratio = 0
+		text.visible_ratio = 0
+		person.text = person_name + ":"
+		anim_player.stop()
+		anim_player_2.stop()
+		anim_player_3.play("text_for_textbox")
+		next.disabled = true
+		await get_tree().create_timer(5).timeout
+		queue_free()
+		
 
 func _on_next_pressed() -> void:
 	next_counter += 1
-	print(next_counter)
-	anim_player.stop()
 
 func _on_choice_1_pressed() -> void:
 	text.text = choice_1_response
@@ -79,8 +82,6 @@ func _on_choice_4_pressed() -> void:
 	next_counter +=1
 
 func buttons_activate():
-	anim_player.stop()
-	anim_player_2.stop()
 	person.visible = false
 	text.visible = false
 	person.visible_ratio = 0
@@ -98,10 +99,8 @@ func buttons_activate():
 	choice4.self_modulate.a = 255
 	choice4.disabled = false
 func buttons_disable():
-	anim_player.stop()
-	anim_player_2.stop()
-	person.visible = true
-	text.visible = true
+	person.visible = false
+	text.visible = false
 	person.visible_ratio = 0
 	text.visible_ratio = 0
 	choice1.visible = false
