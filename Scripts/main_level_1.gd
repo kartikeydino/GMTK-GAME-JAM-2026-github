@@ -1,16 +1,17 @@
 extends Node2D
 
-@onready var timer: Node2D = $CanvasLayer/Timer
+@export var timer: Node2D
 @onready var player: CharacterBody2D = $"../Player"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
 @onready var lvl_2_button: Button = $"CanvasLayer/Lvl 2 button"
 @onready var jump_enemy_death: AudioStreamPlayer = $AudioStreamPlayer
+@onready var jump_enemy: Area2D = $jump_enemy
 
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	timer.timer.start()
+	timer.timer.start(10)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
@@ -31,4 +32,4 @@ func _on_jump_enemy_died() -> void:
 	
 
 func _on_lvl_2_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_2_main.tscn")
+	player.global_position = Vector2(6250,1300)

@@ -7,6 +7,7 @@ enum States {IDLE, BULLET}
 @export var has_dash: bool = true
 @export var has_wall_climb: bool = true 
 @export var has_walk: bool = true 
+@export var has_glitch_fling: bool = true
 #Movement 
 @export var speed = 600.0 
 @export var normal_speed = 600.0

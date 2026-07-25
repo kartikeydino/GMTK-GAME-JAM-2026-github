@@ -2,7 +2,7 @@ extends Area2D
 signal died
 var player
 var speed = 6
-@export var player_node: CharacterBody2D
+@onready var player_node: CharacterBody2D = $"../../Player"
 @export var permanent_y_value: int
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox_collision: CollisionShape2D = $Hurtbox/CollisionShape2D
