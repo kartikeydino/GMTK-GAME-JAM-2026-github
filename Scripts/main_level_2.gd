@@ -30,11 +30,11 @@ func _on_lvl_3_button_pressed() -> void:
 	timer.queue_free()
 	player.is_in_lvl_1 = false
 	player.is_in_lvl_2 = false
-	player.is_in_lvl_3 = true
+	player.is_in_lvl_3 = false
 	level_3.timer.timer.start(60)
 	level_3.timer_gone_2 = false
-	level_3.timer_started = true
-	player.global_position = Vector2(11000,200)
+	level_3.timer_started = false
+	player.global_position = Vector2(9162.0,4016.0)
 	queue_free()
 
 
