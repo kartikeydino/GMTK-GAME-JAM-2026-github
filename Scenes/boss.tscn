@@ -1,9 +1,11 @@
 [gd_scene format=3 uid="uid://bwmkbsk4dj2su"]
 
+[ext_resource type="Script" uid="uid://bhlgao54gxer1" path="res://Scripts/boss.gd" id="1_cxrok"]
 [ext_resource type="Texture2D" uid="uid://cjq20xo33mlhu" path="res://Art/New Piskel (100).png" id="1_wwfse"]
 [ext_resource type="PackedScene" uid="uid://b1brldih3b34x" path="res://Scenes/screw.tscn" id="2_cxrok"]
 
 [node name="Boss" type="Area2D" unique_id=1081642369]
+script = ExtResource("1_cxrok")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81311707]
 texture = ExtResource("1_wwfse")
@@ -21,3 +23,6 @@ position = Vector2(-85, 49)
 
 [node name="Screw4" parent="." unique_id=1074081238 instance=ExtResource("2_cxrok")]
 position = Vector2(-84, -78)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=400587726]
+polygon = PackedVector2Array(-107, -104, -110, 28, -74, 86, 116, 90, 116, 75, 101, 53, 103, -84, 86, -107)
