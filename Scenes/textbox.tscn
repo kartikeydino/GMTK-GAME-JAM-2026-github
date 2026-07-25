@@ -3,7 +3,6 @@
 [ext_resource type="Script" uid="uid://dcr3kqhqyttb7" path="res://Scripts/textbox.gd" id="1_psw4q"]
 [ext_resource type="FontFile" uid="uid://chyf76h4k3vix" path="res://Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="2_i40gg"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="3_yyjux"]
-[ext_resource type="Animation" uid="uid://cq8sy5cec2rxb" path="res://button_for_textbox.res" id="4_crx6k"]
 [ext_resource type="Animation" uid="uid://c4l7s03t2txag" path="res://text_for_textbox.res" id="4_g1jww"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8ltfk"]
@@ -224,11 +223,6 @@ _data = {
 &"text_for_textbox": ExtResource("4_g1jww")
 }
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_g1jww"]
-_data = {
-&"button_for_textbox": ExtResource("4_crx6k")
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_va30d"]
 _data = {
 &"text_for_textbox": ExtResource("4_g1jww")
@@ -340,9 +334,6 @@ T"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1686235835]
 libraries/ = SubResource("AnimationLibrary_crx6k")
-
-[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=601164055]
-libraries/ = SubResource("AnimationLibrary_g1jww")
 
 [node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=1825959892]
 libraries/ = SubResource("AnimationLibrary_va30d")

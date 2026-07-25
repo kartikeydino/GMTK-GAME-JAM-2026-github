@@ -2,7 +2,6 @@ extends Control
 @onready var person: Label = $Person
 @onready var text: Label = $Text
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-@onready var anim_player_2: AnimationPlayer = $AnimationPlayer2
 @onready var anim_player_3: AnimationPlayer = $AnimationPlayer3
 @onready var choice1: Button = $Choice_1
 @onready var choice2: Button = $Choice_2
@@ -54,7 +53,6 @@ func _process(delta: float) -> void:
 		text.visible_ratio = 0
 		person.text = person_name + ":"
 		anim_player.stop()
-		anim_player_2.stop()
 		anim_player_3.play("text_for_textbox")
 		next.disabled = true
 		await get_tree().create_timer(5).timeout
@@ -75,7 +73,6 @@ func _on_choice_2_pressed() -> void:
 func _on_choice_3_pressed() -> void:
 	text.text = choice_3_response
 	next_counter +=1
-
 
 func _on_choice_4_pressed() -> void:
 	text.text = choice_4_response
