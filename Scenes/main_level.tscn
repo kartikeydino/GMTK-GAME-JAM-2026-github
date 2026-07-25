@@ -4,7 +4,6 @@
 [ext_resource type="Texture2D" uid="uid://dop6mfhl7y0m8" path="res://Art/New Piskel (24).png" id="2_6l6h0"]
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="2_ikcpc"]
 [ext_resource type="PackedScene" uid="uid://or72u7l12lvk" path="res://Scenes/jump_enemy.tscn" id="3_5erdv"]
-[ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="3_qbrl8"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="4_a2ia3"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="5_236hc"]
 [ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="7_ha3dl"]
@@ -52,18 +51,6 @@ tile_set = ExtResource("2_ikcpc")
 [node name="jump_enemy" parent="." unique_id=1104532634 instance=ExtResource("3_5erdv")]
 position = Vector2(-14, 408)
 permanent_y_value = 415
-
-[node name="Player" parent="." unique_id=1265756167 instance=ExtResource("3_qbrl8")]
-position = Vector2(-471, 398)
-scale = Vector2(0.5, 0.5)
-
-[node name="Camera" type="Camera2D" parent="Player" unique_id=413647435]
-zoom = Vector2(0.8, 0.8)
-limit_left = -1694
-limit_top = -1150
-limit_right = 2368
-limit_bottom = 1365
-position_smoothing_enabled = true
 
 [node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
 

@@ -99,6 +99,7 @@ tile_set = ExtResource("2_pynx6")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
 
 [node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("4_nv5hb")]
+visible = false
 z_index = 10
 position = Vector2(736, 24)
 timer_time = 20.0
