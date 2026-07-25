@@ -154,6 +154,10 @@ choice_1_text = "im also a failure"
 choice_2_text = "me too"
 choice_3_text = "imagine"
 choice_4_text = "could never be me"
+choice_1_response = "ohohohoho"
+choice_2_response = "hohoho"
+choice_3_response = "hohoh"
+choice_4_response = "ohoh"
 area2d = NodePath("../../textbox_area")
 target = ExtResource("9_o18aq")
 

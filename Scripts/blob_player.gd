@@ -16,7 +16,7 @@ var can_dash: bool = true
 
 var is_left : bool
 var jumping: bool = false
-
+var dashing: bool = false
 
 
 func _physics_process(delta: float) -> void:
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		anim_sprite.play("propeller hat jump") 
 		velocity += get_gravity() * delta
 		anim_player.play("flying reset")
-	if is_on_floor():
+	if is_on_floor() && dashing == false :
 		anim_sprite.play("default")
 		anim_player.play("bobbing anim")
 		jumping = false
@@ -50,10 +50,13 @@ func _physics_process(delta: float) -> void:
 		else:
 			anim_sprite.flip_h = false
 
-	if (can_dash) && Input.is_action_just_pressed("dash"):
+	if (can_dash) && Input.is_action_just_pressed("dash") && dashing == false:
+		dashing = true
+		anim_sprite.play("dash")
 		SPEED *= 2
 		await get_tree().create_timer(1).timeout
 		SPEED = normal_speed
+		dashing = false
 
 	if Input.is_action_just_pressed("climb"):
 		animation_player.play("blob shot")

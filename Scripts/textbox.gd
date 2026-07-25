@@ -1,13 +1,15 @@
 extends Control
 @onready var person: Label = $Person
 @onready var text: Label = $Text
-@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_player_2: AnimationPlayer = $AnimationPlayer2
 @onready var choice1: Button = $Choice_1
 @onready var choice2: Button = $Choice_2
 @onready var choice3: Button = $Choice_3
 @onready var choice4: Button = $Choice_4
+@onready var next: Button = $Next
 
-var next_counter: int
+var next_counter: int = 0
 @export var letter_speed: int = 3
 @export var person_name: String
 @export var speech: String
@@ -31,24 +33,41 @@ func _ready() -> void:
 	choice3.text = choice_3_text
 	choice4.text = choice_4_text
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
 func _process(delta: float) -> void:
 	if area2d.player_entered == true:
 		person.text = person_name + ":"
 		text.text = speech
 		self.visible = true
-		if(person.visible_ratio <1):
-			if (text.visible_ratio < 1):
-				animation_player.play("text_for_textbox")
-				
+		if person.visible_ratio <1 || text.visible_ratio < 1:
+			anim_player.play("text_for_textbox")
+			next.disabled = true
+		else:
+			next.disabled = false
+			
 	if next_counter == 1:
+		await get_tree().create_timer(1).timeout
 		person.visible = false
 		text.visible = false
 		person.visible_ratio = 0
 		text.visible_ratio = 0
-		animation_player.play("button_for_textbox")
+		anim_player_2.play("button_for_textbox")
+		await get_tree().create_timer(2).timeout
+		choice1.visible = true
+		choice1.self_modulate.a = 255
+		choice2.visible = true
+		choice2.self_modulate.a = 255
+		choice3.visible = true
+		choice3.self_modulate.a = 255
+		choice4.visible = true
+		choice4.self_modulate.a = 255
+		anim_player_2.stop()
+
 
 func _on_next_pressed() -> void:
 	next_counter += 1
+	print(next_counter)
+	anim_player.stop()
 
 func _on_choice_1_pressed() -> void:
 	speech = choice_1_text
