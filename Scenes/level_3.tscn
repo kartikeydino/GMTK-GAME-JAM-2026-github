@@ -14,6 +14,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
 size = Vector2(94, 259)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyhha"]
+size = Vector2(87, 239)
+
 [node name="Level 3" type="Node2D" unique_id=949330406]
 script = ExtResource("1_l4wr6")
 
@@ -25,6 +28,7 @@ tile_set = ExtResource("2_b60u5")
 
 [node name="Beating the game label" type="Label" parent="CanvasLayer" unique_id=620366982]
 process_mode = 1
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -46,6 +50,7 @@ horizontal_alignment = 1
 
 [node name="Losing the game label" type="Label" parent="CanvasLayer" unique_id=1566321110]
 process_mode = 1
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -66,6 +71,7 @@ You lost your jump..."
 horizontal_alignment = 1
 
 [node name="Extra blobl level" type="Button" parent="CanvasLayer" unique_id=70193146]
+visible = false
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -80,6 +86,7 @@ text = "Extra blob level?
 "
 
 [node name="Finish Button2" type="Button" parent="CanvasLayer" unique_id=1994324]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -102,6 +109,9 @@ speech = "im another failure..."
 area2d = NodePath("../../textbox_area2d")
 
 [node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("4_833wy")]
+visible = false
+position = Vector2(736, 24)
+timer_time = 60.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("7_g0tlw")
@@ -150,5 +160,13 @@ shape = SubResource("RectangleShape2D_8ltfk")
 position = Vector2(1989, -358)
 scale = Vector2(2, 2)
 
+[node name="glitch_walls2" parent="." unique_id=1804245452 instance=ExtResource("10_5rvg2")]
+y_boost = 1000
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="glitch_walls2" unique_id=1205154273]
+position = Vector2(2800.5, -42.5)
+shape = SubResource("RectangleShape2D_uyhha")
+
 [connection signal="pressed" from="CanvasLayer/Extra blobl level" to="." method="_on_finish_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/Finish Button2" to="." method="_on_finish_button_2_pressed"]
+[connection signal="died" from="Boss" to="." method="_on_boss_died"]

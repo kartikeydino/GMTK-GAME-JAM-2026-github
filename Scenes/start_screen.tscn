@@ -85,6 +85,12 @@ anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
 
+[node name="ColorRect" type="ColorRect" parent="Tutorial_node" unique_id=731587522]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.36078432, 0.88235295, 0.9019608, 1)
+
 [node name="Tutorial_Label" type="Label" parent="Tutorial_node" unique_id=1508936594]
 layout_mode = 1
 anchors_preset = 5
@@ -131,14 +137,8 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_uyhha")
 text = "Back"
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial_node" unique_id=731587522]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-color = Color(0.36078432, 0.88235295, 0.9019608, 1)
-
 [node name="TimerExample" type="Sprite2D" parent="Tutorial_node" unique_id=775428362]
-position = Vector2(202, 409)
+position = Vector2(224, 297)
 texture = ExtResource("7_5a7ho")
 
 [node name="Explanation for mechanics2" type="Label" parent="Tutorial_node" unique_id=594923555]
@@ -148,11 +148,11 @@ offset_top = 100.0
 offset_right = 770.0
 offset_bottom = 252.0
 theme_override_font_sizes/font_size = 20
-text = "To kill an ant, you have to bonk it
+text = "To kill an enemy, you have to bonk it
 on its head. If you touch ANY 
 other part of its body... you 
 might possibly maybe go to 
-sleep"
+heaven..."
 
 [connection signal="pressed" from="Main_Start_Screen/Play_Button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Start_Screen/Play_Button_Main" to="." method="_on_play_button_main_pressed"]

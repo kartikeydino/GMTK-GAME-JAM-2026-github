@@ -13,6 +13,7 @@ var timer_gone: bool
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	timer.visible = true
 	timer.timer.start(10)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
@@ -37,6 +38,7 @@ func _on_jump_enemy_died() -> void:
 func _on_lvl_2_button_pressed() -> void:
 	timer_gone = true
 	timer.queue_free()
+	main_level_2.timer.visible = true
 	main_level_2.timer.timer.start(20)
 	player.is_in_lvl_1 = false
 	player.is_in_lvl_2 = true

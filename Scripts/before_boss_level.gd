@@ -6,5 +6,4 @@ extends Node2D
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	player.global_position = Vector2(11000,200)
-	
 	queue_free()

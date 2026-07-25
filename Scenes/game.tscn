@@ -24,7 +24,7 @@ bus = &"BG music"
 position = Vector2(6219, 1182)
 
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("6_i6g32")]
-scale = Vector2(0.8, 0.8)
+scale = Vector2(1.6, 1.6)
 
 [node name="Level 3" parent="." unique_id=29897310 instance=ExtResource("7_1l0tm")]
 position = Vector2(10064, 178)
