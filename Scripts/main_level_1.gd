@@ -7,7 +7,9 @@ extends Node2D
 @onready var lvl_2_button: Button = $"CanvasLayer/Lvl 2 button"
 @onready var jump_enemy_death: AudioStreamPlayer = $AudioStreamPlayer
 @onready var jump_enemy: Area2D = $jump_enemy
+@onready var main_level_2: Node2D = $"../Main_Level_2"
 
+var timer_gone: bool
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,10 +17,11 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:
-	if (timer.timer.time_left <=0):
-		if not beat_lvl_before_time:
-			player.has_jump = false
-			losing_label.visible = true
+	if timer_gone == false:
+		if (timer.timer.time_left <=0):
+			if not beat_lvl_before_time:
+				player.has_jump = false
+				losing_label.visible = true
 
 
 func _on_jump_enemy_died() -> void:
@@ -32,5 +35,7 @@ func _on_jump_enemy_died() -> void:
 	
 
 func _on_lvl_2_button_pressed() -> void:
+	timer_gone = true
 	timer.queue_free()
+	main_level_2.timer.start(20)
 	player.global_position = Vector2(6250,1300)

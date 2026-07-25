@@ -50,7 +50,7 @@ tile_map_data = PackedByteArray("AAD9/wYAAQABAAAAAAD+/wYAAQABAAAAAAD//wYAAQABAAA
 tile_set = ExtResource("3_bpq2t")
 
 [node name="jump_enemy" parent="." unique_id=1104532634 instance=ExtResource("4_1v6iv")]
-position = Vector2(-948, 415)
+position = Vector2(-890, 409)
 permanent_y_value = 415
 
 [node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
