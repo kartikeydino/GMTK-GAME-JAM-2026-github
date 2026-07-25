@@ -26,3 +26,8 @@ position = Vector2(-84, -78)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=400587726]
 polygon = PackedVector2Array(-107, -104, -110, 28, -74, 86, 116, 90, 116, 75, 101, 53, 103, -84, 86, -107)
+
+[connection signal="body_entered" from="Screw" to="." method="_on_screw_body_entered"]
+[connection signal="body_entered" from="Screw2" to="." method="_on_screw_2_body_entered"]
+[connection signal="body_entered" from="Screw3" to="." method="_on_screw_3_body_entered"]
+[connection signal="body_entered" from="Screw4" to="." method="_on_screw_4_body_entered"]
