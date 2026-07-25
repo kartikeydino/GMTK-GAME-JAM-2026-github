@@ -39,11 +39,13 @@ func _process(delta: float) -> void:
 	attacks()
 
 func attacks():
-	var numbers = [1, 2, 3]
+	var numbers = [1, 2, 3, 4]
 	var attack_type =  numbers.pick_random()
 	if attack_type == 1:
 		animation_player.play("1st")
 	elif attack_type == 2:
-		animation_player.play("2nd")
+		pass
 	elif attack_type == 3:
-		animation_player.play("3rd")
+		pass
+	elif attack_type == 4:
+		animation_player.play("RESET")

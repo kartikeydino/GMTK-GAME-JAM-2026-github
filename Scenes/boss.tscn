@@ -8,6 +8,7 @@
 
 [sub_resource type="Animation" id="Animation_cxrok"]
 resource_name = "1st"
+length = 3.0000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -15,10 +16,10 @@ tracks/0/path = NodePath("Emoji:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.56, 1),
+"times": PackedFloat32Array(0, 0.6, 1.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
-"values": [Vector2(-240, 0), Vector2(124, 0), Vector2(0, 0), Vector2(-240, 0)]
+"values": [Vector2(-240, 0), Vector2(1024, 0), Vector2(0, 0), Vector2(-240, 0)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -27,7 +28,7 @@ tracks/1/path = NodePath("Emoji:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.55),
+"times": PackedFloat32Array(0, 0.6, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 6.2831855]
@@ -35,7 +36,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_ukjjc"]
 resource_name = "2nd"
-length = 1.5
+length = 3.0000000000000004
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -43,7 +44,7 @@ tracks/0/path = NodePath("Emoji:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 1.5),
+"times": PackedFloat32Array(0, 0.5, 1.2, 3),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Vector2(-240, 0), Vector2(-1040, 0), Vector2(1040, 0), Vector2(-240, 0)]
@@ -55,7 +56,7 @@ tracks/1/path = NodePath("Emoji:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.43, 1),
+"times": PackedFloat32Array(0, 1, 2.25),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [0.0, 0.0, 6.2831855]
@@ -63,6 +64,7 @@ tracks/1/keys = {
 
 [sub_resource type="Animation" id="Animation_n725y"]
 resource_name = "3rd"
+length = 3.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -70,7 +72,7 @@ tracks/0/path = NodePath("Emoji:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.05, 1),
+"times": PackedFloat32Array(0, 0.5, 3),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-240, 0), Vector2(1240, 0), Vector2(-240, 0)]
@@ -82,7 +84,7 @@ tracks/1/path = NodePath(".:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 12.566371]
@@ -101,7 +103,6 @@ tracks/2/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_mh6p8"]
-length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -109,10 +110,10 @@ tracks/0/path = NodePath("Emoji:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0009999999),
-"transitions": PackedFloat32Array(1, 1),
+"times": PackedFloat32Array(0, 0.0009999999, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(-240, 0), Vector2(-163, -6)]
+"values": [Vector2(-240, 0), Vector2(-163, -6), Vector2(-163, -6)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -121,10 +122,10 @@ tracks/1/path = NodePath("Emoji:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -133,10 +134,10 @@ tracks/2/path = NodePath(".:rotation")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [0.0]
+"values": [0.0, 0.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_mh6p8"]
@@ -148,6 +149,7 @@ _data = {
 }
 
 [node name="Boss" type="Area2D" unique_id=1081642369]
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_cxrok")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81311707]
