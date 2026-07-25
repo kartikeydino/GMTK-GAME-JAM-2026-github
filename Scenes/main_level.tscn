@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="7_ha3dl"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_lwkuy"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_tqiex"]
+[ext_resource type="PackedScene" uid="uid://du7yo6glsxkg6" path="res://Scenes/level_2.tscn" id="9_o18aq"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="10_f3gli"]
 [ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="11_2jcip"]
 
@@ -154,6 +155,7 @@ choice_2_text = "me too"
 choice_3_text = "imagine"
 choice_4_text = "could never be me"
 area2d = NodePath("../../textbox_area")
+target = ExtResource("9_o18aq")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("7_lwkuy")

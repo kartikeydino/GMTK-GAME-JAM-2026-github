@@ -7,6 +7,8 @@
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=81311707]
 texture = ExtResource("1_wwfse")
+region_enabled = true
+region_rect = Rect2(1.9752502, 29.833311, 237.57274, 213.10457)
 
 [node name="Screw" parent="." unique_id=25527946 instance=ExtResource("2_cxrok")]
 position = Vector2(92, -67)

@@ -20,6 +20,7 @@ var next_counter: int
 @export var choice_3_response: String
 @export var choice_4_response: String
 @export var area2d: Area2D
+@export var target : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -52,15 +53,24 @@ func _on_next_pressed() -> void:
 func _on_choice_1_pressed() -> void:
 	speech = choice_1_text
 	next_counter +=1
+	queue_free()
+	get_tree().change_scene_to_packed(target)
 
 func _on_choice_2_pressed() -> void:
 	speech = choice_2_text
 	next_counter +=1
+	queue_free()
+	get_tree().change_scene_to_packed(target)
 
 func _on_choice_3_pressed() -> void:
 	speech = choice_3_text
 	next_counter +=1
+	queue_free()
+	get_tree().change_scene_to_packed(target)
+
 
 func _on_choice_4_pressed() -> void:
 	speech = choice_4_text
 	next_counter +=1
+	queue_free()
+	get_tree().change_scene_to_packed(target)

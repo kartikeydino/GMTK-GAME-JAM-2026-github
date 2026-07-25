@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="6_bl0du"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="6_vcilj"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_bl0du"]
+[ext_resource type="PackedScene" uid="uid://swy40tkcyp0e" path="res://Scenes/level_3.tscn" id="7_vcilj"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_q0ycs"]
 [ext_resource type="PackedScene" uid="uid://bft48pbm4rxut" path="res://Scenes/spider.tscn" id="8_uhnj4"]
 [ext_resource type="Texture2D" uid="uid://bs74gl4m4ea7l" path="res://Art/New Piskel (97).png" id="9_42uki"]
@@ -135,6 +136,7 @@ visible = false
 person_name = "Failure 2.0"
 speech = "im another failure..."
 area2d = NodePath("../../textbox_area2d")
+target = ExtResource("7_vcilj")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("7_bl0du")
