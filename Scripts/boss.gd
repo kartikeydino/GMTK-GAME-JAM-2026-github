@@ -16,24 +16,28 @@ func decrease_health():
 		queue_free()
 
 func _on_screw_body_entered(body: Node2D) -> void:
-	if body.name == "Player" and player.speed == 6000.0:
+	if body.name == "Player":
 		decrease_health()
+		queue_free()
 
 
 func _on_screw_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+		queue_free()
 
 
 func _on_screw_3_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+		queue_free()
 		
 
 
 func _on_screw_4_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+		queue_free()
 
 func _process(delta: float) -> void:
 	attacks()
