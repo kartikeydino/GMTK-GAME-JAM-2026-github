@@ -195,7 +195,7 @@ libraries/ = SubResource("AnimationLibrary_mh6p8")
 autoplay = &"emoji spin"
 
 [node name="Emoji" parent="." unique_id=1269880923 instance=ExtResource("4_ukjjc")]
-z_index = -1
+z_index = 1
 position = Vector2(-240, 0)
 scale = Vector2(0.6, 0.6)
 script = ExtResource("5_n725y")
