@@ -105,7 +105,7 @@ script = ExtResource("1_6t5aa")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 animation = &"running"
-frame_progress = 0.7825937
+frame_progress = 0.017472893
 
 [node name="Area2D" type="Area2D" parent="." unique_id=893833107]
 script = ExtResource("3_6t5aa")

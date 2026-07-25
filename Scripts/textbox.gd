@@ -22,7 +22,6 @@ var next_counter: int = 0
 @export var choice_3_response: String
 @export var choice_4_response: String
 @export var area2d: Area2D
-@export var target : PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -46,23 +45,16 @@ func _process(delta: float) -> void:
 			next.disabled = false
 			
 	if next_counter == 1:
-		await get_tree().create_timer(1).timeout
-		person.visible = false
-		text.visible = false
-		person.visible_ratio = 0
-		text.visible_ratio = 0
-		anim_player_2.play("button_for_textbox")
-		await get_tree().create_timer(2).timeout
-		choice1.visible = true
-		choice1.self_modulate.a = 255
-		choice2.visible = true
-		choice2.self_modulate.a = 255
-		choice3.visible = true
-		choice3.self_modulate.a = 255
-		choice4.visible = true
-		choice4.self_modulate.a = 255
-		anim_player_2.stop()
-
+		person.text = ""
+		person.text = ""
+		buttons_activate()
+		
+	elif next_counter == 2:
+		if person.visible_ratio <1 || text.visible_ratio < 1:
+			text.text = speech
+			buttons_disable()
+			anim_player.play("text_for_textbox")
+			next.disabled = true
 
 func _on_next_pressed() -> void:
 	next_counter += 1
@@ -70,26 +62,57 @@ func _on_next_pressed() -> void:
 	anim_player.stop()
 
 func _on_choice_1_pressed() -> void:
-	speech = choice_1_text
+	text.text = choice_1_response
 	next_counter +=1
-	queue_free()
-	get_tree().change_scene_to_packed(target)
 
 func _on_choice_2_pressed() -> void:
-	speech = choice_2_text
+	text.text = choice_2_response
 	next_counter +=1
-	queue_free()
-	get_tree().change_scene_to_packed(target)
 
 func _on_choice_3_pressed() -> void:
-	speech = choice_3_text
+	text.text = choice_3_response
 	next_counter +=1
-	queue_free()
-	get_tree().change_scene_to_packed(target)
 
 
 func _on_choice_4_pressed() -> void:
-	speech = choice_4_text
+	text.text = choice_4_response
 	next_counter +=1
-	queue_free()
-	get_tree().change_scene_to_packed(target)
+
+func buttons_activate():
+	anim_player.stop()
+	anim_player_2.stop()
+	person.visible = false
+	text.visible = false
+	person.visible_ratio = 0
+	text.visible_ratio = 0
+	choice1.visible = true
+	choice1.self_modulate.a = 255
+	choice1.disabled = false
+	choice2.visible = true
+	choice2.self_modulate.a = 255
+	choice2.disabled = false
+	choice3.visible = true
+	choice3.self_modulate.a = 255
+	choice3.disabled = false
+	choice4.visible = true
+	choice4.self_modulate.a = 255
+	choice4.disabled = false
+func buttons_disable():
+	anim_player.stop()
+	anim_player_2.stop()
+	person.visible = true
+	text.visible = true
+	person.visible_ratio = 0
+	text.visible_ratio = 0
+	choice1.visible = false
+	choice1.self_modulate.a = 255
+	choice1.disabled = true
+	choice2.visible = false
+	choice2.self_modulate.a = 255
+	choice2.disabled = true
+	choice3.visible = false
+	choice3.self_modulate.a = 255
+	choice3.disabled = true
+	choice4.visible = false
+	choice4.self_modulate.a = 255
+	choice4.disabled = true
