@@ -30,5 +30,5 @@ func _on_jump_enemy_died() -> void:
 		lvl_3_button.visible = true
 
 
-func _on_lvl_2_button_pressed() -> void:
+func _on_lvl_3_button_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/level_3_main.tscn")
