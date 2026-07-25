@@ -54,18 +54,3 @@ func _on_screw_4_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
 		queue_free()
-
-func _process(delta: float) -> void:
-	attacks()
-
-func attacks():
-	var numbers = [1, 2, 3, 4]
-	var attack_type =  numbers.pick_random()
-	if attack_type == 1:
-		animation_player.play("1st")
-	elif attack_type == 2:
-		pass
-	elif attack_type == 3:
-		pass
-	elif attack_type == 4:
-		animation_player.play("RESET")
