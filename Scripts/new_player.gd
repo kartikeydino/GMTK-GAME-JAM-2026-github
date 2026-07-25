@@ -67,7 +67,7 @@ func bouncy_wouncy():
 	velocity.y = -300.0
 	
 func deadtp():
-	global_position = Vector2(0, -4800)
+	global_position = Vector2(1592, -2449)
 	dying = true
 	
 func starttp():

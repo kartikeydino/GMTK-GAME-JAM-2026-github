@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var timer: Node2D = $CanvasLayer/Timer
-@onready var player: CharacterBody2D = $Player
+@onready var player: CharacterBody2D = $"../Player"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
 @onready var lvl_2_button: Button = $"CanvasLayer/Lvl 2 button"
