@@ -9,7 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_keufu"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="9_joegk"]
 [ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="10_5rvg2"]
-[ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="11_c81s1"]
 [ext_resource type="PackedScene" uid="uid://bwmkbsk4dj2su" path="res://Scenes/boss.tscn" id="11_jtv8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
@@ -136,8 +135,5 @@ shape = SubResource("RectangleShape2D_8ltfk")
 [node name="Boss" parent="." unique_id=1081642369 instance=ExtResource("11_jtv8s")]
 position = Vector2(1989, -358)
 scale = Vector2(2, 2)
-
-[node name="Player" parent="." unique_id=1265756167 instance=ExtResource("11_c81s1")]
-position = Vector2(143, 500)
 
 [connection signal="pressed" from="CanvasLayer/Finish Button" to="CanvasLayer/Finish Button" method="_on_pressed"]
