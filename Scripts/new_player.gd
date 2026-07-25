@@ -22,6 +22,7 @@ var dashing: bool = false
 #Connections
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionPolygon2D = $CollisionPolygon2D
+@onready var area_2d: Area2D = $Area2D
 
 var is_in_lvl_1: bool = true
 var is_in_lvl_2: bool = false
@@ -33,11 +34,8 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-		
-	if not $Area2D.has_overlapping_areas():
-		velocity += get_gravity() * delta * downward_force
 	
-	if Input.is_action_just_pressed("up") and has_jump == true and $Area2D.has_overlapping_areas():
+	if Input.is_action_just_pressed("up") and has_jump == true and is_on_floor():
 		velocity.y = jump
 		##anay, there is a glitch with wall_climb... its working with the jump button
 	if Input.is_action_pressed("climb") and has_wall_climb == true and is_on_wall():
