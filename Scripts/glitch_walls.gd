@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		await get_tree().create_timer(0.5).timeout
 		player.speed = player.normal_speed * 10
 		player.set_physics_process(true)
-		player.velocity.y -= 1500
+		player.velocity.y -= 4000
 		player.collision_shape.disabled = true
 		await get_tree().create_timer(0.2).timeout
 		player.speed =  player.normal_speed
