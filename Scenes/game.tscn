@@ -5,7 +5,6 @@
 [ext_resource type="PackedScene" uid="uid://bdphsnihw2ro5" path="res://Scenes/level_1_main.tscn" id="3_wowpa"]
 [ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://du7yo6glsxkg6" path="res://Scenes/level_2_main.tscn" id="4_i6g32"]
-[ext_resource type="PackedScene" uid="uid://swy40tkcyp0e" path="res://Scenes/level_3_main.tscn" id="5_1l0tm"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="6_i6g32"]
 
 [node name="Game" type="Node2D" unique_id=692546951]
@@ -16,21 +15,13 @@ stream = ExtResource("2_qxrlw")
 autoplay = true
 bus = &"BG music"
 
-[node name="Level_1" parent="." unique_id=949330406 node_paths=PackedStringArray("timer") instance=ExtResource("3_wowpa")]
-timer = NodePath("../CanvasLayer/Timer")
+[node name="Level_1" parent="." unique_id=949330406 instance=ExtResource("3_wowpa")]
 
-[node name="Main_Level_2" parent="." unique_id=1858522974 node_paths=PackedStringArray("timer") instance=ExtResource("4_i6g32")]
+[node name="Main_Level_2" parent="." unique_id=1858522974 instance=ExtResource("4_i6g32")]
 position = Vector2(6219, 1182)
-timer = NodePath("../CanvasLayer/Timer")
-
-[node name="Level 3" parent="." unique_id=63551874 instance=ExtResource("5_1l0tm")]
-visible = false
-position = Vector2(11190, 134)
 
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("6_i6g32")]
-
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1492149408]
-zoom = Vector2(0.8, 0.8)
+scale = Vector2(0.8, 0.8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457378247]
 

@@ -105,7 +105,7 @@ script = ExtResource("1_6t5aa")
 scale = Vector2(1.2, 1.2)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 animation = &"running"
-frame_progress = 0.4922945
+frame_progress = 0.7008989
 
 [node name="Area2D" type="Area2D" parent="." unique_id=893833107]
 script = ExtResource("3_6t5aa")
@@ -117,3 +117,6 @@ shape = SubResource("CircleShape2D_k8pp1")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=901332494]
 position = Vector2(-11.041729, 17.380562)
 polygon = PackedVector2Array(-49.95827, -28.380562, -49.95827, 6.619438, -25.958271, 30.619438, -25.958271, 101.61944, -25.958271, 102.61944, -1.958271, 103.61944, 34.04173, 102.61944, 34.04173, 30.619438, 46.04173, 6.619438, 46.04173, -42.38056, 21.041729, -53.38056, 10.041729, -58.38056, 23.041729, -66.38056, 46.04173, -89.38056, 46.04173, -112.38056, 11.041729, -143.38055, -7.958271, -142.38055, -37.95827, -113.38056, -37.95827, -90.38056, -2.958271, -59.38056)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=284403999]
+zoom = Vector2(0.8, 0.8)
