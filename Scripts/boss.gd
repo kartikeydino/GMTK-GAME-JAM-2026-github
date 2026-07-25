@@ -16,43 +16,40 @@ func decrease_health():
 	health -= 1
 	health_bar.value -= health_bar.step
 	if health == 0: 
-		queue_free()
+		screw.queue_free()
 
 func _on_screw_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-		screw.queue_free()
+
+		screw_2.queue_free()
+
+		queue_free()
+
 
 
 func _on_screw_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-		screw_2.queue_free()
+
+		screw_3.queue_free()
+
+		queue_free()
+
 
 
 func _on_screw_3_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-		screw_3.queue_free()
+
+		screw_4.queue_free()
+
+		queue_free()
+
 		
 
 
 func _on_screw_4_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-		screw_4.queue_free()
-
-func _process(delta: float) -> void:
-	attacks()
-
-func attacks():
-	var numbers = [1, 2, 3, 4]
-	var attack_type =  numbers.pick_random()
-	if attack_type == 1:
-		animation_player.play("1st")
-	elif attack_type == 2:
-		pass
-	elif attack_type == 3:
-		pass
-	elif attack_type == 4:
-		animation_player.play("RESET")
+		queue_free()

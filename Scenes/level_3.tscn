@@ -133,7 +133,7 @@ position = Vector2(3837, -373)
 shape = SubResource("RectangleShape2D_8ltfk")
 
 [node name="Boss" parent="." unique_id=1081642369 instance=ExtResource("11_jtv8s")]
-position = Vector2(1838, -505)
+position = Vector2(1989, -358)
 scale = Vector2(2, 2)
 
 [connection signal="pressed" from="CanvasLayer/Finish Button" to="CanvasLayer/Finish Button" method="_on_pressed"]
