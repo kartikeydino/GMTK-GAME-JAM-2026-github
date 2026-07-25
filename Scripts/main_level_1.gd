@@ -1,6 +1,6 @@
 extends Node2D
 
-@export var timer: Node2D
+@onready var timer: Node2D = $CanvasLayer/Timer
 @onready var player: CharacterBody2D = $"../Player"
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
@@ -32,4 +32,5 @@ func _on_jump_enemy_died() -> void:
 	
 
 func _on_lvl_2_button_pressed() -> void:
+	timer.queue_free()
 	player.global_position = Vector2(6250,1300)
