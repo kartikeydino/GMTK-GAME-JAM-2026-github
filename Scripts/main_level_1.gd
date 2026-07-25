@@ -31,4 +31,4 @@ func _on_jump_enemy_died() -> void:
 	
 
 func _on_lvl_2_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_2.tscn")
+	get_tree().change_scene_to_file("res://Scenes/level_2_main.tscn")

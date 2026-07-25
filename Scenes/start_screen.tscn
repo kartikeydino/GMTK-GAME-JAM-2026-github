@@ -145,8 +145,10 @@ offset_left = 928.0
 offset_top = 91.0
 offset_right = 1136.0
 offset_bottom = 299.0
+theme_override_colors/font_color = Color(0.79950345, 0.95263165, 3.080368e-06, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
 icon = SubResource("CompressedTexture2D_mtlf8")
+alignment = 0
 
 [node name="Play_Button_Main" type="Button" parent="Main_Start_Screen" unique_id=1661803202]
 layout_mode = 0
@@ -182,11 +184,10 @@ offset_left = 198.0
 offset_top = 413.0
 offset_right = 465.0
 offset_bottom = 503.0
-text = "Tutorial
-"
+text = "Tutorial"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main_Start_Screen" unique_id=1061398477]
-position = Vector2(629.00006, 488)
+position = Vector2(636, 466)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_8ltfk")
 autoplay = "default"
