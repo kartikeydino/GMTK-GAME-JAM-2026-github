@@ -52,6 +52,7 @@ debug_color = Color(0.99995106, 0, 0.111325406, 0.41960785)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1340122078]
 position = Vector2(-8, -2)
 shape = SubResource("CapsuleShape2D_8ltfk")
+disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
