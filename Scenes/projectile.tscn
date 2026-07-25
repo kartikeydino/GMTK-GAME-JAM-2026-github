@@ -1,8 +1,41 @@
 [gd_scene format=3 uid="uid://s2k5sk1fie8w"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_k8pp1"]
+[ext_resource type="Texture2D" uid="uid://rpanbk2olu2" path="res://Art/New Piskel - 2026-07-25T091422.675.png" id="1_f8cdk"]
 
-[node name="Area2D" type="Area2D" unique_id=1269880923]
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr2qt"]
+atlas = ExtResource("1_f8cdk")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl4hk"]
+atlas = ExtResource("1_f8cdk")
+region = Rect2(0, 256, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k8pp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yr2qt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl4hk")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
+radius = 73.061615
+
+[node name="Emoji" type="Area2D" unique_id=1269880923]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2055158299]
+texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_k8pp1")
+autoplay = "default"
+frame_progress = 0.8811358
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=814457686]
+position = Vector2(6, 6)
+shape = SubResource("CircleShape2D_k8pp1")
+debug_color = Color(0.81622505, 0.40701932, 0, 0.41960785)
