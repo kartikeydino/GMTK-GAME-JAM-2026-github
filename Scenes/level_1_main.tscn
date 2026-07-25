@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dop6mfhl7y0m8" path="res://Art/New Piskel (24).png" id="2_j1aew"]
 [ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="3_bpq2t"]
 [ext_resource type="PackedScene" uid="uid://or72u7l12lvk" path="res://Scenes/jump_enemy.tscn" id="4_1v6iv"]
+[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="6_rkpgo"]
 [ext_resource type="FontFile" uid="uid://d28n2h6sc0tqh" path="res://Pixelify_Sans/static/PixelifySans-Regular.ttf" id="7_atu1n"]
 [ext_resource type="PackedScene" uid="uid://cmwycnqfc2jvf" path="res://Scenes/textbox.tscn" id="8_2ik5d"]
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="9_olkf3"]
@@ -49,7 +50,7 @@ tile_map_data = PackedByteArray("AAD9/wYAAQABAAAAAAD+/wYAAQABAAAAAAD//wYAAQABAAA
 tile_set = ExtResource("3_bpq2t")
 
 [node name="jump_enemy" parent="." unique_id=1104532634 instance=ExtResource("4_1v6iv")]
-position = Vector2(-14, 408)
+position = Vector2(-948, 415)
 permanent_y_value = 415
 
 [node name="Jump_Buffer_Area" type="Area2D" parent="." unique_id=1605561644]
@@ -139,6 +140,9 @@ choice_2_response = "Yeah"
 choice_3_response = "No, it wouldn't be the same"
 choice_4_response = "😭😭😭"
 area2d = NodePath("../../textbox_area")
+
+[node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("6_rkpgo")]
+timer_time = 10.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1086304361]
 stream = ExtResource("9_olkf3")
