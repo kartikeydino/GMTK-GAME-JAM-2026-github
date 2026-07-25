@@ -22,19 +22,31 @@ func decrease_health():
 func _on_screw_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+
 		screw_2.queue_free()
+
+		queue_free()
+
 
 
 func _on_screw_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+
 		screw_3.queue_free()
+
+		queue_free()
+
 
 
 func _on_screw_3_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+
 		screw_4.queue_free()
+
+		queue_free()
+
 		
 
 
