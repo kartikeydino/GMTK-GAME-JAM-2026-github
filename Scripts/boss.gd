@@ -4,6 +4,8 @@ enum States {IDLE, ATTACK_1, ATTACK_2, ATTACK_3}
 @export var states = States.IDLE
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var health_bar = 4 
+@onready var player: CharacterBody2D = $"../Player"
+
 
 func decrease_health():
 	health_bar -= 1 
@@ -11,7 +13,7 @@ func decrease_health():
 		queue_free()
 
 func _on_screw_body_entered(body: Node2D) -> void:
-	if body.name == "Player":
+	if body.name == "Player" and player.speed == 6000.0:
 		decrease_health()
 
 

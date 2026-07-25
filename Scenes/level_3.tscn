@@ -23,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAI
 tile_set = ExtResource("2_b60u5")
 
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("3_kmy7e")]
-position = Vector2(60, 489)
+position = Vector2(43, 254)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
@@ -141,7 +141,7 @@ position = Vector2(3837, -373)
 shape = SubResource("RectangleShape2D_8ltfk")
 
 [node name="Boss" parent="." unique_id=1081642369 instance=ExtResource("11_jtv8s")]
-position = Vector2(1956, -31)
+position = Vector2(1967, -114)
 scale = Vector2(2, 2)
 
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="CanvasLayer/Lvl 2 button" method="_on_pressed"]
