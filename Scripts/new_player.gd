@@ -22,6 +22,9 @@ var dashing: bool = false
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionPolygon2D = $CollisionPolygon2D
 
+var is_in_lvl_1: bool = true
+var is_in_lvl_2: bool = false
+var is_in_lvl_3: bool = false
 
 func _ready() -> void:
 	speed = normal_speed
@@ -68,11 +71,18 @@ func bouncy_wouncy():
 	velocity.y = -300.0
 	
 func deadtp():
-	global_position = Vector2(1592, -2449)
+	global_position = Vector2(1600, -2450)
 	dying = true
 	await get_tree().create_timer(3).timeout
 	starttp()
 	
 func starttp():
-	global_position = Vector2(0,-200)
-	dying = false
+	if is_in_lvl_1:
+		global_position = Vector2(2300,400)
+		dying = false
+	if is_in_lvl_2:
+		global_position = Vector2(6200,1300)
+		dying = false
+	if is_in_lvl_3:
+		global_position = Vector2(10200,300)
+		dying = false

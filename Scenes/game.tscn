@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://bcjvxo0eax1wg"]
+[gd_scene format=4 uid="uid://bcjvxo0eax1wg"]
 
 [ext_resource type="Script" uid="uid://brxumclef3704" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="AudioStream" uid="uid://n4i1b5tbhel2" path="res://Music/gmtk game jam main theme.mp3" id="2_qxrlw"]
@@ -6,6 +6,9 @@
 [ext_resource type="PackedScene" uid="uid://du7yo6glsxkg6" path="res://Scenes/level_2_main.tscn" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="6_i6g32"]
 [ext_resource type="PackedScene" uid="uid://5ckwcwjv1s5j" path="res://Scenes/level_3.tscn" id="7_1l0tm"]
+[ext_resource type="TileSet" uid="uid://cs85eawo7a2yb" path="res://tileset.tres" id="7_v158k"]
+[ext_resource type="Texture2D" uid="uid://dop6mfhl7y0m8" path="res://Art/New Piskel (24).png" id="8_h4fw4"]
+[ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="9_h4fw4"]
 
 [node name="Game" type="Node2D" unique_id=692546951]
 script = ExtResource("1_3dryh")
@@ -25,3 +28,61 @@ scale = Vector2(0.8, 0.8)
 
 [node name="Level 3" parent="." unique_id=29897310 instance=ExtResource("7_1l0tm")]
 position = Vector2(10064, 178)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1731287921]
+tile_map_data = PackedByteArray("AAALAN7/AQAAAAAAAAAcAOb/AQACAAIAAAAcAN7/AQACAAAAAAALAOb/AQAAAAIAAAALAN//AQAAAAEAAAALAOD/AQAAAAEAAAALAOH/AQAAAAEAAAALAOL/AQAAAAEAAAALAOP/AQAAAAEAAAALAOT/AQAAAAEAAAALAOX/AQAAAAEAAAAMAN7/AQABAAAAAAANAN7/AQABAAAAAAAOAN7/AQABAAAAAAAPAN7/AQABAAAAAAAQAN7/AQABAAAAAAARAN7/AQABAAAAAAASAN7/AQABAAAAAAATAN7/AQABAAAAAAAUAN7/AQABAAAAAAAVAN7/AQABAAAAAAAWAN7/AQABAAAAAAAXAN7/AQABAAAAAAAYAN7/AQABAAAAAAAZAN7/AQABAAAAAAAaAN7/AQABAAAAAAAbAN7/AQABAAAAAAAcAN//AQACAAEAAAAcAOD/AQACAAEAAAAcAOH/AQACAAEAAAAcAOL/AQACAAEAAAAcAOP/AQACAAEAAAAcAOT/AQACAAEAAAAcAOX/AQACAAEAAAAMAOb/AQABAAIAAAANAOb/AQABAAIAAAAOAOb/AQABAAIAAAAPAOb/AQABAAIAAAAQAOb/AQABAAIAAAARAOb/AQABAAIAAAASAOb/AQABAAIAAAATAOb/AQABAAIAAAAUAOb/AQABAAIAAAAVAOb/AQABAAIAAAAWAOb/AQABAAIAAAAXAOb/AQABAAIAAAAYAOb/AQABAAIAAAAZAOb/AQABAAIAAAAaAOb/AQABAAIAAAAbAOb/AQABAAIAAAA=")
+tile_set = ExtResource("7_v158k")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1551232869]
+self_modulate = Color(0.68804306, 0.68804306, 0.688043, 1)
+z_index = -4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2676.0
+offset_top = -3749.0002
+offset_right = 1783.2314
+offset_bottom = 594.4612
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_h4fw4")
+
+[node name="TextureRect2" type="TextureRect" parent="." unique_id=1640333858]
+self_modulate = Color(0.68804306, 0.68804306, 0.688043, 1)
+z_index = -4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3732.0
+offset_top = -2081.0002
+offset_right = 8191.2314
+offset_bottom = 2262.4612
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_h4fw4")
+
+[node name="TextureRect3" type="TextureRect" parent="." unique_id=1835961521]
+self_modulate = Color(0.68804306, 0.68804306, 0.688043, 1)
+z_index = -4096
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 9845.001
+offset_top = -2338.0005
+offset_right = 14304.233
+offset_bottom = 2005.4604
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.3, 1.3)
+texture = ExtResource("8_h4fw4")
+
+[node name="Label" type="Label" parent="." unique_id=1343195061]
+offset_left = 1379.0
+offset_top = -2518.0
+offset_right = 1840.0
+offset_bottom = -2364.0
+theme_override_fonts/font = ExtResource("9_h4fw4")
+theme_override_font_sizes/font_size = 128
+text = "HEAVEN"
