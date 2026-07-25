@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_keufu"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="9_joegk"]
 [ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="10_5rvg2"]
+[ext_resource type="PackedScene" uid="uid://bwmkbsk4dj2su" path="res://Scenes/boss.tscn" id="11_jtv8s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
 size = Vector2(94, 259)
@@ -22,7 +23,7 @@ tile_map_data = PackedByteArray("AAAAAAcAAQAAAAAAAAAAAAgAAQAAAAEAAAAAAAkAAQAAAAI
 tile_set = ExtResource("2_b60u5")
 
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("3_kmy7e")]
-position = Vector2(60, 489)
+position = Vector2(43, 254)
 scale = Vector2(0.5, 0.5)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
@@ -138,5 +139,9 @@ shape = SubResource("RectangleShape2D_8ltfk")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="glitch_walls" unique_id=250786910]
 position = Vector2(3837, -373)
 shape = SubResource("RectangleShape2D_8ltfk")
+
+[node name="Boss" parent="." unique_id=1081642369 instance=ExtResource("11_jtv8s")]
+position = Vector2(1967, -114)
+scale = Vector2(2, 2)
 
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="CanvasLayer/Lvl 2 button" method="_on_pressed"]

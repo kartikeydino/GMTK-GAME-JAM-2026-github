@@ -101,7 +101,7 @@ tile_set = ExtResource("2_uhnj4")
 position = Vector2(60, 489)
 scale = Vector2(0.5, 0.5)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=382930047]
+[node name="Camera2D2" type="Camera2D" parent="Player" unique_id=382930047]
 zoom = Vector2(0.8, 0.8)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
