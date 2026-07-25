@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 
 func _on_spider_webs_cut() -> void:
-	collision_shap.disabled = false
+	collision_shap.set_deferred("disabled", false)
 	anim_player.play("fall")
 
 

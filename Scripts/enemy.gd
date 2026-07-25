@@ -12,8 +12,8 @@ func _on_hurtbox_area_entered(area: Area2D) -> void:
 	if(area.has_method("kill")):
 		player_node.bouncy_wouncy()
 		died.emit()
-		hurtbox_collision.call_deferred("is_disabled")
-		collision.call_deferred("is_disabled")
+		hurtbox_collision.set_deferred("disabled", true)
+		collision.set_deferred("disabled", true)
 		var tween = create_tween()
 		tween.tween_property(anim, "scale", Vector2(1, -1), 0.3)
 		tween.parallel().tween_property(anim, "global_position", Vector2(global_position.x, global_position.y + 70), 0.3)

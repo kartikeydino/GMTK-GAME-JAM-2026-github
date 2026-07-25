@@ -4,7 +4,7 @@ extends Node2D
 @onready var player: CharacterBody2D = $Player
 @onready var losing_label: Label = $"CanvasLayer/Losing the game label"
 @onready var beating_label: Label = $"CanvasLayer/Beating the game label"
-@onready var lvl_2_button: Button = $"CanvasLayer/Lvl 2 button"
+@onready var lvl_3_button: Button = $"CanvasLayer/Lvl 3 button"
 @onready var jump_enemy_death: AudioStreamPlayer = $AudioStreamPlayer
 
 var beat_lvl_before_time: bool = false
@@ -27,7 +27,7 @@ func _on_jump_enemy_died() -> void:
 		timer.timer.stop()
 		beating_label.visible = true
 		player.has_jump = true
-		lvl_2_button.visible = true
+		lvl_3_button.visible = true
 
 
 func _on_lvl_2_button_pressed() -> void:

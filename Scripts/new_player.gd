@@ -19,7 +19,7 @@ var glitching: bool = false
 var dashing: bool = false
 #Connections
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var collision_shape: CollisionPolygon2D = $CollisionPolygon2D
 
 
 func _ready() -> void:
@@ -42,11 +42,13 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction and has_walk == true and glitching == false:
 		velocity.x = direction * speed
+		animated_sprite_2d.position.y = -25
 		animated_sprite_2d.play("running")
 		walking = true
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 		walking = false
+		animated_sprite_2d.position.y = 0
 		animated_sprite_2d.play("idle")
 	
 	move_and_slide()
