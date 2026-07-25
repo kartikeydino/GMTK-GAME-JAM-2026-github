@@ -16,3 +16,11 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	pass
+
+
+func _on_finish_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/blob_level_1.tscn")
+
+
+func _on_finish_button_2_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")
