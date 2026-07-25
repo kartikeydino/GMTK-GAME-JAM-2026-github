@@ -12,44 +12,33 @@ enum States {IDLE, ATTACK_1, ATTACK_2, ATTACK_3}
 @onready var screw_4: Area2D = $Screw4
 
 func decrease_health():
-	
 	health -= 1
-	health_bar.value -= health_bar.step
+	health_bar.value -= 25
 	if health == 0: 
-		screw.queue_free()
+		queue_free()
 
 func _on_screw_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-
-		screw_2.queue_free()
-
-		queue_free()
+		screw.queue_free()
 
 
 
 func _on_screw_2_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
+		screw_2.queue_free()
 
-		screw_3.queue_free()
-
-		queue_free()
 
 
 
 func _on_screw_3_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-
-		screw_4.queue_free()
-
-		queue_free()
-
-		
+		screw_3.queue_free()
 
 
 func _on_screw_4_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		decrease_health()
-		queue_free()
+		screw_4.queue_free()
