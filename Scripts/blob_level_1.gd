@@ -30,4 +30,4 @@ func _on_ant_enemy_died() -> void:
 
 
 func _on_lvl_2_button_pressed() -> void:
-	pass
+	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")

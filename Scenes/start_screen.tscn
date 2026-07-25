@@ -1,18 +1,10 @@
 [gd_scene format=3 uid="uid://c5pvvrul7cdub"]
 
 [ext_resource type="Script" uid="uid://k5rlkv706wj7" path="res://Scripts/start_screen.gd" id="1_5e717"]
-[ext_resource type="FontFile" uid="uid://bfopgohyu60ql" path="res://Pixelify_Sans/static/PixelifySans-Medium.ttf" id="4_mtlf8"]
+[ext_resource type="Texture2D" uid="uid://2o8ll0pp8ru" path="res://Art/HAS_JUMP = FALSE.png" id="2_5e717"]
+[ext_resource type="FontFile" uid="uid://chyf76h4k3vix" path="res://Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_mtlf8"]
 [ext_resource type="FontFile" uid="uid://doprnxqlujkcd" path="res://Pixelify_Sans/static/PixelifySans-Bold.ttf" id="5_mtlf8"]
-[ext_resource type="Texture2D" uid="uid://bj1l1iji41cxm" path="res://Art/blob_man_idle.png" id="5_nqnrp"]
-[ext_resource type="Texture2D" uid="uid://cx761xumohchq" path="res://Art/blob.webp" id="6_nqnrp"]
 [ext_resource type="Texture2D" uid="uid://bj3m5cg8f324x" path="res://Art/Timer Example.png" id="7_5a7ho"]
-
-[sub_resource type="Gradient" id="Gradient_nqnrp"]
-offsets = PackedFloat32Array(1)
-colors = PackedColorArray(1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_8ltfk"]
-gradient = SubResource("Gradient_nqnrp")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yobgy"]
 bg_color = Color(0.36078432, 0.88235295, 0.9019608, 1)
@@ -27,89 +19,8 @@ expand_margin_bottom = 4.0
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mtlf8"]
 load_path = "res://.godot/imported/Play Button.png-bb3154657a88f7cf28a70e3bb50d9073.ctex"
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5a7ho"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(0, 0, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssogg"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(320, 0, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_akot6"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(640, 0, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rjuq2"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(0, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c1457"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(320, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_64bn7"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(640, 320, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_357se"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(0, 640, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_hppi5"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(320, 640, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_poqtw"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(640, 640, 320, 320)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a0dpv"]
-atlas = ExtResource("5_nqnrp")
-region = Rect2(0, 960, 320, 320)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_8ltfk"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5a7ho")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ssogg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_akot6")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rjuq2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c1457")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_64bn7")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_357se")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_hppi5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_poqtw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a0dpv")
-}],
-"loop": 1,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="Gradient" id="Gradient_yobgy"]
-colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_uyhha"]
-gradient = SubResource("Gradient_yobgy")
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5e717"]
+bg_color = Color(0, 0.68763876, 0.34232432, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyhha"]
 bg_color = Color(0, 0.3529412, 0.5764706, 1)
@@ -132,14 +43,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" type="TextureRect" parent="Main_Start_Screen" unique_id=960814440]
-self_modulate = Color(0.6117647, 0.9254902, 0.654902, 1)
-layout_mode = 0
-offset_right = 2240.0
-offset_bottom = 1249.0
-texture = SubResource("GradientTexture2D_8ltfk")
+[node name="HasJump=False" type="Sprite2D" parent="Main_Start_Screen" unique_id=1717416449]
+position = Vector2(576, 324)
+texture = ExtResource("2_5e717")
 
 [node name="Play_Button" type="Button" parent="Main_Start_Screen" unique_id=285534438]
+visible = false
 layout_mode = 0
 offset_left = 928.0
 offset_top = 91.0
@@ -152,60 +61,29 @@ alignment = 0
 
 [node name="Play_Button_Main" type="Button" parent="Main_Start_Screen" unique_id=1661803202]
 layout_mode = 0
-offset_left = 746.0
-offset_top = 381.0
-offset_right = 954.0
-offset_bottom = 589.0
+offset_left = 846.0
+offset_top = 255.0
+offset_right = 1054.0
+offset_bottom = 463.0
 theme_override_styles/normal = SubResource("StyleBoxFlat_yobgy")
 icon = SubResource("CompressedTexture2D_mtlf8")
 
-[node name="Label" type="Label" parent="Main_Start_Screen" unique_id=1598192107]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 239.0
-offset_top = 29.0
-offset_right = 857.0
-offset_bottom = 266.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("4_mtlf8")
-theme_override_font_sizes/font_size = 64
-text = "Wait... 
-WHERES MY JUMP?!?!"
-horizontal_alignment = 1
-
 [node name="Tutorial" type="Button" parent="Main_Start_Screen" unique_id=1622276099]
 layout_mode = 0
-offset_left = 198.0
-offset_top = 413.0
-offset_right = 465.0
-offset_bottom = 503.0
+offset_left = 84.0
+offset_top = 333.0
+offset_right = 351.0
+offset_bottom = 423.0
+theme_override_fonts/font = ExtResource("3_mtlf8")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5e717")
 text = "Tutorial"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Main_Start_Screen" unique_id=1061398477]
-position = Vector2(636, 466)
-scale = Vector2(0.7, 0.7)
-sprite_frames = SubResource("SpriteFrames_8ltfk")
-autoplay = "default"
-frame = 5
-frame_progress = 0.21183112
 
 [node name="Tutorial_node" type="Control" parent="." unique_id=2050742215]
 visible = false
 anchors_preset = 0
 offset_right = 1152.0
 offset_bottom = 648.0
-
-[node name="Background" type="TextureRect" parent="Tutorial_node" unique_id=1984492653]
-self_modulate = Color(0, 0.8039216, 0.627451, 1)
-layout_mode = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-texture = SubResource("GradientTexture2D_uyhha")
 
 [node name="Tutorial_Label" type="Label" parent="Tutorial_node" unique_id=1508936594]
 layout_mode = 1
@@ -253,6 +131,12 @@ theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxFlat_uyhha")
 text = "Back"
 
+[node name="ColorRect" type="ColorRect" parent="Tutorial_node" unique_id=731587522]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0.36078432, 0.88235295, 0.9019608, 1)
+
 [node name="TimerExample" type="Sprite2D" parent="Tutorial_node" unique_id=775428362]
 position = Vector2(202, 409)
 texture = ExtResource("7_5a7ho")
@@ -269,11 +153,6 @@ on its head. If you touch ANY
 other part of its body... you 
 might possibly maybe go to 
 sleep"
-
-[node name="Blob" type="Sprite2D" parent="." unique_id=792328166]
-position = Vector2(1018, 23)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_nqnrp")
 
 [connection signal="pressed" from="Main_Start_Screen/Play_Button" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Main_Start_Screen/Play_Button_Main" to="." method="_on_play_button_main_pressed"]
