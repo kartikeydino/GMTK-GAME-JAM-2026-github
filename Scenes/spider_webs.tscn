@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://d06v0bjbajgoj"]
+
+[ext_resource type="Script" uid="uid://crrixpm58a2of" path="res://Scripts/spider_webs.gd" id="1_4yn4c"]
+[ext_resource type="Texture2D" uid="uid://bs74gl4m4ea7l" path="res://Art/New Piskel (97).png" id="1_knxjy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
+size = Vector2(20, 256)
+
+[node name="spider_webs" type="Area2D" unique_id=51256098]
+script = ExtResource("1_4yn4c")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1837233022]
+texture = ExtResource("1_knxjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1804065223]
+position = Vector2(-10, 0)
+shape = SubResource("RectangleShape2D_8ltfk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

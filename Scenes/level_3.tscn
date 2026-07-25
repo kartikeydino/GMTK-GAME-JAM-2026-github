@@ -9,6 +9,10 @@
 [ext_resource type="AudioStream" uid="uid://c60k2aev4q2i4" path="res://Music/jump_enemy_death.mp3" id="7_g0tlw"]
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_keufu"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="9_joegk"]
+[ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="10_5rvg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ltfk"]
+size = Vector2(94, 259)
 
 [node name="Level 3" type="Node2D" unique_id=949330406]
 script = ExtResource("1_liaj6")
@@ -116,12 +120,22 @@ metadata/_edit_use_anchors_ = true
 [node name="Area2D" type="Area2D" parent="." unique_id=154763287]
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D" unique_id=1889634975]
-polygon = PackedVector2Array(711, 89, 662, 237, 488, 236, 466, 388, 246, 388, 229, 563, 6, 553, -6, 820, 3227, 844, 3249, 814, 3248, -991, 3168, -986, 3154, 51, 715, 76, 711, 82)
+polygon = PackedVector2Array(711, 89, 662, 237, 488, 236, 466, 388, 246, 388, 229, 563, 6, 553, -6, 820, 3227, 844, 3249, 814, 3248, -991, 3157, -988, 3154, 51, 715, 76, 711, 82)
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=1606420616]
 
 [node name="textbox_area2d" parent="." unique_id=893048733 instance=ExtResource("9_joegk")]
 position = Vector2(971, -502)
 scale = Vector2(0.9380978, 0.9127293)
+
+[node name="glitch_walls" parent="." unique_id=7530591 instance=ExtResource("10_5rvg2")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="glitch_walls" unique_id=1385812281]
+position = Vector2(3200, -866.5)
+shape = SubResource("RectangleShape2D_8ltfk")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="glitch_walls" unique_id=2062932621]
+position = Vector2(3200, -373)
+shape = SubResource("RectangleShape2D_8ltfk")
 
 [connection signal="pressed" from="CanvasLayer/Lvl 2 button" to="CanvasLayer/Lvl 2 button" method="_on_pressed"]

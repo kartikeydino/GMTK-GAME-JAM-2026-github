@@ -16,6 +16,7 @@ enum States {IDLE, BULLET}
 @export var states = States.IDLE
 var walking: bool = false
 var glitching: bool = false
+var dashing: bool = false
 #Connections
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var collision_shape: CollisionShape2D = $CollisionShape2D
@@ -52,8 +53,10 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("dash") and has_dash:
 		speed = dash_speed
+		dashing = true
 		await get_tree().create_timer(0.15).timeout
 		speed = normal_speed
+		dashing = false
 		
 func player():
 	pass 

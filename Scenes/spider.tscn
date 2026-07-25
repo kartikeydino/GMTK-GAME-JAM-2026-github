@@ -28,6 +28,10 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_k8pp1"]
 radius = 7.0
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8ltfk"]
+radius = 5.0
+height = 18.0
+
 [node name="Spider" type="Area2D" unique_id=2052655370]
 script = ExtResource("1_gedd4")
 
@@ -43,4 +47,11 @@ z_index = 3
 shape = SubResource("CircleShape2D_k8pp1")
 debug_color = Color(0.99995106, 0, 0.111325406, 0.41960785)
 
+[node name="Area2D" type="Area2D" parent="." unique_id=1633462198]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1340122078]
+position = Vector2(-8, -2)
+shape = SubResource("CapsuleShape2D_8ltfk")
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
