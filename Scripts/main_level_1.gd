@@ -37,5 +37,8 @@ func _on_jump_enemy_died() -> void:
 func _on_lvl_2_button_pressed() -> void:
 	timer_gone = true
 	timer.queue_free()
-	main_level_2.timer.start(20)
+	main_level_2.timer.timer.start(20)
+	main_level_2.timer_gone_2 = false
+	main_level_2.timer_started = true
 	player.global_position = Vector2(6250,1300)
+	queue_free()
