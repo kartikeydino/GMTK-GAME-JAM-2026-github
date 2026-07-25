@@ -31,4 +31,4 @@ func _on_jump_enemy_died() -> void:
 
 
 func _on_lvl_3_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://Scenes/level_3_main.tscn")
+	player.global_position = Vector2(11300,200)
