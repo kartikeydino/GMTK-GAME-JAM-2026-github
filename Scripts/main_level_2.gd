@@ -12,7 +12,7 @@ var timer_started: bool = false
 var beat_lvl_before_time: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	timer.timer.start(10)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _process(delta: float) -> void:

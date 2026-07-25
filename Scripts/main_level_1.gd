@@ -22,6 +22,7 @@ func _process(delta: float) -> void:
 			if not beat_lvl_before_time:
 				player.has_jump = false
 				losing_label.visible = true
+				lvl_2_button.visible = true
 
 
 func _on_jump_enemy_died() -> void:

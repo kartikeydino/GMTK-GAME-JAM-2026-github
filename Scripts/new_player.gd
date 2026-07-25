@@ -5,6 +5,7 @@ enum States {IDLE, BULLET}
 #Abilities
 @export var has_jump: bool = true
 @export var has_dash: bool = true
+@export var has_constant_dash: bool = true
 @export var has_wall_climb: bool = true 
 @export var has_walk: bool = true 
 @export var has_glitch_fling: bool = true
@@ -63,7 +64,7 @@ func _physics_process(delta: float) -> void:
 		await get_tree().create_timer(0.15).timeout
 		speed = normal_speed
 		dashing = false
-		
+
 func player():
 	pass 
 
@@ -84,5 +85,5 @@ func starttp():
 		global_position = Vector2(6200,1300)
 		dying = false
 	if is_in_lvl_3:
-		global_position = Vector2(10200,300)
+		global_position = Vector2(10200,15)
 		dying = false
