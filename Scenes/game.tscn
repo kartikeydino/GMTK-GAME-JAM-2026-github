@@ -3,9 +3,9 @@
 [ext_resource type="Script" uid="uid://brxumclef3704" path="res://Scripts/game.gd" id="1_3dryh"]
 [ext_resource type="AudioStream" uid="uid://n4i1b5tbhel2" path="res://Music/gmtk game jam main theme.mp3" id="2_qxrlw"]
 [ext_resource type="PackedScene" uid="uid://bdphsnihw2ro5" path="res://Scenes/level_1_main.tscn" id="3_wowpa"]
-[ext_resource type="PackedScene" uid="uid://ciamklcmp5pgf" path="res://Scenes/timer.tscn" id="3_wrm1d"]
 [ext_resource type="PackedScene" uid="uid://du7yo6glsxkg6" path="res://Scenes/level_2_main.tscn" id="4_i6g32"]
 [ext_resource type="PackedScene" uid="uid://d3exj61gbyryi" path="res://Scenes/player.tscn" id="6_i6g32"]
+[ext_resource type="PackedScene" uid="uid://5ckwcwjv1s5j" path="res://Scenes/level_3.tscn" id="7_1l0tm"]
 
 [node name="Game" type="Node2D" unique_id=692546951]
 script = ExtResource("1_3dryh")
@@ -23,7 +23,5 @@ position = Vector2(6219, 1182)
 [node name="Player" parent="." unique_id=1265756167 instance=ExtResource("6_i6g32")]
 scale = Vector2(0.8, 0.8)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1457378247]
-
-[node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("3_wrm1d")]
-timer_time = 10.0
+[node name="Level 3" parent="." unique_id=29897310 instance=ExtResource("7_1l0tm")]
+position = Vector2(10064, 178)

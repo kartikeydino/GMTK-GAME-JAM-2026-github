@@ -32,7 +32,6 @@ func _on_jump_enemy_died() -> void:
 		beating_label.visible = true
 		player.has_jump = true
 		lvl_2_button.visible = true
-	
 
 func _on_lvl_2_button_pressed() -> void:
 	timer_gone = true

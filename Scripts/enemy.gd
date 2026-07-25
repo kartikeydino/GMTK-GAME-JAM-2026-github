@@ -24,8 +24,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.name == "Player":
 		player = body
 		player.deadtp()
-		await get_tree().create_timer(2).timeout
-		player.starttp()
 
 func _physics_process(_delta: float) -> void:
 	global_position.y = permanent_y_value
