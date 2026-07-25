@@ -4,7 +4,6 @@ enum States {IDLE, ATTACK_1, ATTACK_2, ATTACK_3}
 @export var states = States.IDLE
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @export var health = 4 
-@onready var player: CharacterBody2D = $"../Player"
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var screw: Area2D = $Screw
 @onready var screw_2: Area2D = $Screw2
@@ -14,7 +13,7 @@ signal died
 func decrease_health():
 	health -= 1
 	health_bar.value -= 25
-	if health == 0: 
+	if health <= 0: 
 		died.emit()
 		queue_free()
 

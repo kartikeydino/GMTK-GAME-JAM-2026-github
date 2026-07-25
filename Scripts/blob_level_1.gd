@@ -26,8 +26,6 @@ func _on_ant_enemy_died() -> void:
 		timer.timer.stop()
 		beating_label.visible = true
 		blob_player.can_jump = true
-		lvl_2_button.visible = true
 
-
-func _on_lvl_2_button_pressed() -> void:
+func _on_finish_the_game_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/start_screen.tscn")

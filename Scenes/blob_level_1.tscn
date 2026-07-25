@@ -105,5 +105,5 @@ process_mode = 3
 stream = ExtResource("6_lhdnt")
 bus = &"VFX"
 
-[connection signal="pressed" from="CanvasLayer/Finish the game" to="." method="_on_lvl_2_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Finish the game" to="." method="_on_finish_the_game_pressed"]
 [connection signal="died" from="Ant Enemy" to="." method="_on_ant_enemy_died"]
