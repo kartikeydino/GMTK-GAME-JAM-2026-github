@@ -3,13 +3,16 @@ extends Area2D
 enum States {IDLE, ATTACK_1, ATTACK_2, ATTACK_3}
 @export var states = States.IDLE
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@export var health_bar = 4 
+@export var health = 4 
 @onready var player: CharacterBody2D = $"../Player"
+@onready var health_bar: ProgressBar = $ProgressBar
 
 
 func decrease_health():
-	health_bar -= 1 
-	if health_bar == 0: 
+	
+	health -= 1
+	health_bar.value -= health_bar.step
+	if health == 0: 
 		queue_free()
 
 func _on_screw_body_entered(body: Node2D) -> void:

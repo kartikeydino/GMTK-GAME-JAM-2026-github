@@ -228,4 +228,5 @@ position = Vector2(971, -502)
 scale = Vector2(0.9380978, 0.9127293)
 
 [connection signal="pressed" from="CanvasLayer/Lvl 3 button" to="." method="_on_lvl_3_button_pressed"]
+[connection signal="died" from="Spider" to="." method="_on_spider_died"]
 [connection signal="cut" from="spider_webs" to="Spider" method="_on_spider_webs_cut"]

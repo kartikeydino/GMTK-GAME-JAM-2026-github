@@ -70,6 +70,8 @@ func bouncy_wouncy():
 func deadtp():
 	global_position = Vector2(1592, -2449)
 	dying = true
+	await get_tree().create_timer(3).timeout
+	starttp()
 	
 func starttp():
 	global_position = Vector2(0,-200)
