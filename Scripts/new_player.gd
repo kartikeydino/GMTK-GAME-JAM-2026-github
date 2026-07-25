@@ -78,12 +78,14 @@ func deadtp():
 	starttp()
 	
 func starttp():
+	if is_in_lvl_3:
+		print("working")
+		global_position = Vector2(11000,200)
+		dying = false
 	if is_in_lvl_1:
 		global_position = Vector2(2300,400)
 		dying = false
 	if is_in_lvl_2:
+		is_in_lvl_1 = false
 		global_position = Vector2(6200,1300)
-		dying = false
-	if is_in_lvl_3:
-		global_position = Vector2(10200,15)
 		dying = false

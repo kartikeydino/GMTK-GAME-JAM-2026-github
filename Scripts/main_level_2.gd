@@ -28,12 +28,13 @@ func _process(delta: float) -> void:
 func _on_lvl_3_button_pressed() -> void:
 	timer_gone_2 = true
 	timer.queue_free()
+	player.is_in_lvl_1 = false
 	player.is_in_lvl_2 = false
 	player.is_in_lvl_3 = true
 	level_3.timer.timer.start(60)
 	level_3.timer_gone_2 = false
 	level_3.timer_started = true
-	player.global_position = Vector2(11300,200)
+	player.global_position = Vector2(11000,200)
 	queue_free()
 
 

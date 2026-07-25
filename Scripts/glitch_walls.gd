@@ -15,4 +15,4 @@ func _on_body_entered(body: Node2D) -> void:
 		player.speed =  player.normal_speed
 		player.collision_shape.disabled = false
 		player.self_modulate.a = 200  
-		player.position.y += -20
+		player.position.y += -100
