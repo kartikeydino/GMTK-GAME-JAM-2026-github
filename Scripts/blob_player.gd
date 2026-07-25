@@ -2,8 +2,6 @@ extends CharacterBody2D
 @onready var antt_enemy: Area2D = $"../Ant Enemy"
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
-const blobmite = preload("uid://b8pwc3yrhgv13")
-var blobmite_instantiate = blobmite.instantiate()
 @export var antler_enemy: Area2D
 @onready var animation_player: AnimationPlayer = $blobmite_v2/AnimationPlayer
 var SPEED = 900.0
@@ -56,11 +54,7 @@ func _physics_process(delta: float) -> void:
 		SPEED *= 2
 		await get_tree().create_timer(1).timeout
 		SPEED = normal_speed
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_RIGHT):
-		blobmite_instantiate.ant_enemy = antt_enemy
-		get_tree().current_scene.add_child(blobmite_instantiate)
-		blobmite_instantiate.transform.origin = Vector2(global_position.x, global_position.y)
-	
+
 	if Input.is_action_just_pressed("climb"):
 		animation_player.play("blob shot")
 

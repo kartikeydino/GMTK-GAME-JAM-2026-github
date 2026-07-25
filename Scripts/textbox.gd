@@ -29,7 +29,6 @@ func _ready() -> void:
 	choice2.text = choice_2_text
 	choice3.text = choice_3_text
 	choice4.text = choice_4_text
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if area2d.player_entered == true:
@@ -39,20 +38,13 @@ func _process(delta: float) -> void:
 		if(person.visible_ratio <1):
 			if (text.visible_ratio < 1):
 				animation_player.play("text_for_textbox")
-
+				
 	if next_counter == 1:
 		person.visible = false
 		text.visible = false
 		person.visible_ratio = 0
 		text.visible_ratio = 0
 		animation_player.play("button_for_textbox")
-		
-	if next_counter == 2:
-		person.visible = true
-		person.text = "You"
-		text.visible = true
-		text.text = speech
-		animation_player.play("text_for_textbox")
 
 func _on_next_pressed() -> void:
 	next_counter += 1
