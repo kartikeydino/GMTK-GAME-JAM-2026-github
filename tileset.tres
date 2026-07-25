@@ -32,8 +32,11 @@ texture_region_size = Vector2i(79, 82)
 2:2/0 = 0
 2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, -42.5, 39.5, -42.5, 39.5, 42.5, -39.5, 42.5)
 16:0/0 = 0
+16:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, -41, 39.5, -41, 39.5, 41, -39.5, 41)
 16:1/0 = 0
+16:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, -41, 39.5, -41, 39.5, 41, -39.5, 41)
 16:2/0 = 0
+16:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-39.5, -41, 39.5, -41, 39.5, 41, -39.5, 41)
 
 [resource]
 tile_size = Vector2i(79, 82)
