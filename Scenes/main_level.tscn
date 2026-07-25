@@ -11,7 +11,6 @@
 [ext_resource type="Texture2D" uid="uid://cs3nowdx7niei" path="res://Art/icon.svg" id="8_tqiex"]
 [ext_resource type="PackedScene" uid="uid://ko21oed60ev3" path="res://Scenes/texbox_area.tscn" id="10_f3gli"]
 [ext_resource type="PackedScene" uid="uid://3hkwseb1r02n" path="res://Scenes/glitch_walls.tscn" id="11_2jcip"]
-[ext_resource type="PackedScene" uid="uid://b7p6o1ef2yax2" path="res://Scenes/pause_screen.tscn" id="12_6l6h0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uyhha"]
 size = Vector2(657, 334)
@@ -68,9 +67,6 @@ position = Vector2(-696.5, 657)
 shape = SubResource("RectangleShape2D_uyhha")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1591033388]
-
-[node name="pause_screen" parent="CanvasLayer" unique_id=1869481916 instance=ExtResource("12_6l6h0")]
-visible = false
 
 [node name="Timer" parent="CanvasLayer" unique_id=1737727876 instance=ExtResource("4_a2ia3")]
 z_index = 10

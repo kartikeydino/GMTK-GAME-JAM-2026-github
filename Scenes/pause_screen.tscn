@@ -5,6 +5,7 @@
 [ext_resource type="FontFile" uid="uid://chyf76h4k3vix" path="res://Pixelify_Sans/PixelifySans-VariableFont_wght.ttf" id="3_16tsp"]
 [ext_resource type="Texture2D" uid="uid://cx761xumohchq" path="res://Art/blob.webp" id="4_16tsp"]
 [ext_resource type="Texture2D" uid="uid://cjhrttdw4bojv" path="res://Art/Play Button.png" id="5_orahx"]
+[ext_resource type="AudioStream" uid="uid://cia7vmiq0cglp" path="res://Music/Record (online-voice-recorder.com).mp3" id="6_umkmc"]
 
 [node name="pause_screen" type="Control" unique_id=1869481916]
 process_mode = 3
@@ -43,6 +44,9 @@ offset_right = 653.5
 offset_bottom = 343.0
 size_flags_horizontal = 3
 size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+value = 1.0
 
 [node name="Label" type="Label" parent="." unique_id=215963334]
 layout_mode = 0
@@ -90,6 +94,7 @@ scale = Vector2(0.5, 0.5)
 icon = ExtResource("4_16tsp")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=208655555]
+stream = ExtResource("6_umkmc")
 
 [connection signal="toggled" from="Mute" to="." method="_on_mute_toggled"]
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
